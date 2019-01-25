@@ -1,29 +1,14 @@
 import { createSymbiote } from 'redux-symbiote'
 
 const initialState = {
-  followedTopics: null
+  checkedIn: false
 }
 
 const symbiotes = {
-  followTopic: (state, payload) => ({
+  checkIn: (state) => ({
     ...state,
-    followedTopics: {
-      ...followedTopics,
-      [payload.id]: payload.value,
-    }
-  })
+    checkedIn: true,
+  }),
 }
 
-const symbiotes = {
-  changeLocale: (state, payload) => {
-    return ({
-      ...state,
-      i18n: {
-        ...state.i18n,
-        locale: payload,
-        t: (id) => i18n.translations[payload][id],
-      }
-    })
-  }
-}
-export const { actions, reducer: translationReducer } = createSymbiote(initialState, symbiotes, 'app/translation')
+export const { actions, reducer: userReducer } = createSymbiote(initialState, symbiotes, 'app/user')

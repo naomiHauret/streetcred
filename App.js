@@ -2,13 +2,11 @@ import React from 'react'
 import { Provider as ReduxProvider } from 'react-redux'
 import NativeTachyons from 'react-native-style-tachyons'
 import { StyleSheet } from 'react-native'
-import { configureStore } from './src/store'
-import App from './src/screens/App'
-import { colors } from './src/styles'
-import { customStyles } from './src/styles'
-
-// Redux store
-const store = configureStore()
+import { PersistGate } from 'redux-persist/integration/react'
+import { store, persistor }  from 'store'
+import App from 'screens/App'
+import { colors } from 'styles'
+import { customStyles } from 'styles'
 
 // Styles
 NativeTachyons.build({
@@ -26,6 +24,8 @@ NativeTachyons.build({
 
 export default wrappedApp = () => (
   <ReduxProvider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </ReduxProvider>
 )

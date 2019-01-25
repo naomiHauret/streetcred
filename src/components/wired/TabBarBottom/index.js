@@ -2,8 +2,8 @@ import React from 'react'
 import { TouchableHighlight, Text, View } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
-import { actions as TranslationActions } from './../../store/symbiotes/Translation'
-import { actions as NavigatorActions } from './../../store/symbiotes/Navigator'
+import { actions as TranslationActions } from 'store/symbiotes/Translation'
+import { actions as NavigatorActions } from 'store/symbiotes/Navigator'
 
 const mapStateToProps = (state) => ({
   i18n: state.translation.i18n,

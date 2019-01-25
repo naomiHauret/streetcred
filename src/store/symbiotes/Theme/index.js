@@ -1,5 +1,5 @@
 import { createSymbiote } from 'redux-symbiote'
-import * as THEMES from './../../../utils/theme'
+import * as THEMES from 'utils/theme'
 
 //
 // Handle UI appearance of bottom navbar

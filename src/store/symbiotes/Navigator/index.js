@@ -1,5 +1,5 @@
 import { createSymbiote } from 'redux-symbiote'
-import { FEED } from './../../../utils/navigation'
+import { FEED } from 'utils/navigation'
 //
 // Handle UI appearance of bottom navbar
 

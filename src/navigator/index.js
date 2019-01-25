@@ -6,16 +6,16 @@ import {
   createMaterialTopTabNavigator,
   createAppContainer,
 } from "react-navigation"
-import ArticleScreen from "./../screens/Article"
-import FirstTimeScreen from "./../screens/FirstTime"
-import ExploreScreen from "./../screens/Explore"
-import ParametersScreen from "./../screens/Parameters"
-import AboutScreen from "./../screens/About"
-import TermsScreen from "./../screens/Terms"
-import BookmarkedScreen from "./../screens/Bookmarked"
-import PickedForMeScreen from "./../screens/PickedForMe"
-import FollowingScreen from "./../screens/Following"
-import TabBarBottom from "./../components/TabBarBottom"
+import ArticleScreen from "screens/Article"
+import FirstTimeScreen from "screens/FirstTime"
+import ExploreScreen from "screens/Explore"
+import ParametersScreen from "screens/Parameters"
+import AboutScreen from "screens/About"
+import TermsScreen from "screens/Terms"
+import BookmarkedScreen from "screens/Bookmarked"
+import PickedForMeScreen from "screens/PickedForMe"
+import FollowingScreen from "screens/Following"
+import TabBarBottom from "components/wired/TabBarBottom"
 
 const InitialStack = createSwitchNavigator({
   FirstTime: FirstTimeScreen,

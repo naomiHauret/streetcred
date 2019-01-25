@@ -3,8 +3,9 @@
 
 
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Picker } from 'react-native';
 import NativeTachyons from "react-native-style-tachyons";
+import { t } from './../../utils/translation'
 
 export default NativeTachyons.wrap(
   class FirstTime extends React.Component {
@@ -14,8 +15,14 @@ export default NativeTachyons.wrap(
         <View style={styles.container}>
           <Text cls="fs-lg">Explore screen</Text>
           <Text style={{ fontSize: 20 }}>Explore screen</Text>
-          <Text style={{ fontSize: 20 }}>{i18n.t('foo')}</Text>
-
+          <Text style={{ fontSize: 20 }}>{t('foo', i18n)}</Text>
+          <Picker
+            selectedValue={i18n.locale}
+            style={{ height: 50, width: 100 }}
+            onValueChange={(itemValue, itemIndex) => this.setState({ language: itemValue })}>
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
           <Button
             onPress={
               () => this.props.navigation.navigate('Feed')

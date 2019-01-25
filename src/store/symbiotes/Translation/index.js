@@ -1,8 +1,8 @@
 import { Localization } from 'expo-localization'
 import { createSymbiote } from 'redux-symbiote'
 import dotize from "dotize"
-import fr  from './../../../translations/fr'
-import en from './../../../translations/en'
+import fr  from 'translations/fr'
+import en from 'translations/en'
 
 //
 // Handle UI translation
@@ -15,7 +15,6 @@ const i18n = {
   },
   fallback,
   locale,
-  t: (id) => i18n.translations[i18n.locale][id],
 }
 
 const initialState = {
@@ -29,7 +28,6 @@ const symbiotes = {
       i18n: {
         ...state.i18n,
         locale: payload,
-        t: (id) => i18n.translations[payload][id],
       }
     })
   }

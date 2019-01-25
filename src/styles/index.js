@@ -1,5 +1,5 @@
 import { sizes } from "react-native-style-tachyons"
-import * as TOKENS from "./../utils/designTokens"
+import * as TOKENS from "utils/designTokens"
 
 const fontSizes = {
   "fs-3xs": TOKENS.SIZE_3XS,

@@ -1,13 +1,24 @@
 import { createSymbiote } from 'redux-symbiote'
+import topicsList from 'utils/topics'
+
+const topics = {}
+topicsList.map(topic => topics[topic] = {
+  followed: false,
+})
 
 const initialState = {
-  topics: null
+  list: topics,
 }
 
 const symbiotes = {
   toggleTopicState: (state, payload) => ({
     ...state,
-    topics: null, // map topic, switch id : follow à true ou false
+    list: {
+      ...state.list,
+      [payload]: {
+        followed: !state.list[payload].followed,
+      },
+    },
   }),
 }
 

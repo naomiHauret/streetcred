@@ -1,7 +1,7 @@
 import { createSymbiote } from 'redux-symbiote'
 
 const initialState = {
-  checkedIn: false
+  checkedIn: false,
 }
 
 const symbiotes = {

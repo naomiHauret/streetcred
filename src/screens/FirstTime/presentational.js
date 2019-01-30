@@ -2,63 +2,58 @@
 
 
 
-import React from 'react';
-import { StyleSheet, Text, View, Button, Picker } from 'react-native';
-import NativeTachyons from "react-native-style-tachyons";
-import { t } from './../../utils/translation'
+import React, { PureComponent } from 'react'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
+import { wrap, styles as s } from "react-native-style-tachyons"
+import { t } from 'utils/translation'
+import { Ionicons } from '@expo/vector-icons'
+import Button from 'components/presentationals/Button'
 
-export default NativeTachyons.wrap(
-  class FirstTime extends React.Component {
+export default wrap(
+  class FirstTime extends PureComponent {
     render() {
-      const { i18n } = this.props
+      const { translation, topics, toggleTopicState, handleSubmit } = this.props
+      const topicsNames = Object.keys(topics)
+      const pickedTopics = Object.values(topics).filter(topic => topic.followed === true).length > 0
+
       return (
-        <View style={styles.container}>
-          <Text cls="fs-lg">Explore screen</Text>
-          <Text style={{ fontSize: 20 }}>Explore screen</Text>
-          <Text style={{ fontSize: 20 }}>{t('foo', i18n)}</Text>
-          <Picker
-            selectedValue={i18n.locale}
-            style={{ height: 50, width: 100 }}
-            onValueChange={(itemValue, itemIndex) => this.setState({ language: itemValue })}>
-            <Picker.Item label="Java" value="java" />
-            <Picker.Item label="JavaScript" value="js" />
-          </Picker>
-          <Button
-            onPress={
-              () => this.props.navigation.navigate('Feed')
-            }
-            title="Change page"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
-
-          <Button
-            onPress={
-              () => this.props.changeLocale('en')
-            }
-            title="Change locale"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
-
-          <Button
-            onPress={
-              () => this.props.switchTheme()
-            }
-            title="Change theme"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
+        <View cls='flx-i jcsb'>
+          <View cls='flx-i'>
+            <Text cls='pt3 pb2 fs-lg black-0 b tac'>{t("texts.pickTopics", translation)}</Text>
+              <ScrollView  contentContainerStyle={[s.jcc, s.aic, s.flx__i, s.flxw, s.flxdr]}>
+                {
+                  topicsNames.map((item, index) =>  <Button
+                    uppercase={false}
+                    block={false}
+                    theme="secondary"
+                    radius="lg"
+                    size="sm"
+                    align="center"
+                    key={index}
+                    handleOnPress={(e) => {
+                      e.preventDefault()
+                      return toggleTopicState(item)
+                    }}
+                    inverted={topics[item].followed}
+                    margins="ma1"
+                  >
+                    {t(`topics.${item}`, translation)}
+                </Button>)
+              }
+            </ScrollView>
+          </View>
+          <View>
+            <Button onPress={(e) => {
+              e.preventDefault()
+              return handleSubmit()
+            }} disabled={!pickedTopics} uppercase={true} block={true} radius="default" theme="primary" align="between" inverted={false} size="xl">
+              {t("labels.startReading", translation)}
+              <Text>
+                <Ionicons name="md-arrow-forward" size={22.14} />
+              </Text>
+            </Button>
+          </View>
         </View>
-      );
+      )
     }
   })
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

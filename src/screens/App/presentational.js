@@ -1,15 +1,27 @@
 import React, { PureComponent } from 'react'
-import Navigator from './../../navigator'
+import { View, StatusBar, Platform } from 'react-native'
+import { wrap } from "react-native-style-tachyons"
+import * as THEMES from 'utils/theme'
+import Navigator from 'navigator'
 
-export default class App extends PureComponent {
+export default wrap(
+  class App extends PureComponent {
     componentDidMount() {
       this.props.componentDidMount()
     }
-
     render() {
+      const { theme } = this.props
+      const screenTheme = { }
+      screenTheme[THEMES.LIGHT] = 'white-1'
+      screenTheme[THEMES.DARK] = 'black-3'
+
       return (
-        <Navigator />
+        <View style={{ paddingTop: Platform.OS === 'ios' ? 20 : StatusBar.currentHeight }} cls={`flx-i bg-${screenTheme[theme]}`}>
+          <StatusBar hidden={false} />
+          <Navigator />
+        </View>
       )
     }
   }
+)
 

@@ -18,8 +18,16 @@ const radius = {
   "radius-lg": TOKENS.RADIUS_LG,
 }
 
+const letterSpacings = {
+  'lt0': TOKENS.LETTER_SPACING_0,
+  'lt-xs': TOKENS.LETTER_SPACING_XS,
+  'lt-sm': TOKENS.LETTER_SPACING_SM,
+  'lt-lg': TOKENS.LETTER_SPACING_LG,
+}
+
 const customFontSizes = {}
 const customRadius = {}
+const customLetterSpacings = {}
 
 Object.keys(fontSizes).map(
   (fs) =>
@@ -31,9 +39,17 @@ Object.keys(fontSizes).map(
 Object.keys(radius).map(
   (rad) =>
     (customRadius[rad] = {
-      borderRadius: customRadius[rad],
+      borderRadius: radius[rad],
     }),
 )
+
+Object.keys(letterSpacings).map(
+  (lt) =>
+    (customLetterSpacings[lt] = {
+      letterSpacing: letterSpacings[lt],
+    }),
+)
+
 
 export const colors = {
   "white-0": TOKENS.COLOR_WHITE_0,
@@ -47,9 +63,24 @@ export const colors = {
   "black-0": TOKENS.COLOR_BLACK_0,
   "black-1": TOKENS.COLOR_BLACK_1,
   "black-2": TOKENS.COLOR_BLACK_2,
+  "black-3": TOKENS.COLOR_BLACK_3,
+  "transparent": "transparent",
 }
 
 export const customStyles = {
   ...customFontSizes,
   ...customRadius,
+  ...customLetterSpacings,
+  'flxdr': {
+    flexDirection: 'row',
+  },
+  'flxdc': {
+    flexDirection: 'column',
+  },
+  'tac': {
+    textAlign: 'center',
+  },
+  'flxw': {
+    flexWrap: 'wrap'
+  }
 }

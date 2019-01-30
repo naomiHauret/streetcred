@@ -1,9 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Screen from './presentational'
-import { actions } from './../../store/symbiotes/Initialization'
+import { actions } from 'store/symbiotes/Initialization'
 
-const mapStateToProps = () => ({})
+const mapStateToProps = (state) => ({
+  theme: state.theme.current,
+})
 
 const mapDispatchToProps = (dispatch, props) =>{
   return ({

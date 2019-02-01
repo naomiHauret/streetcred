@@ -1,10 +1,12 @@
 
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { Transition } from 'react-navigation-fluid-transitions'
 
 export default class PickedForMe extends React.Component {
   render() {
     return (
+
       <View>
         <Text>Picked for me screen</Text>
         <Button

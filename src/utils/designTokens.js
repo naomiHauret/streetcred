@@ -10,8 +10,9 @@ export const COLOR_GRAY_2 = "rgb(145, 144, 175)"
 export const COLOR_GRAY_3 = "rgb(154, 153, 165)"
 export const COLOR_BLACK_0 = "rgb(81, 80, 116)"
 export const COLOR_BLACK_1 = "rgb(60, 59, 91)"
-export const COLOR_BLACK_2 = "rgb(47, 47, 53)"
-export const COLOR_BLACK_3 = 'rgb(27, 27, 27)'
+export const COLOR_BLACK_2 = "rgb(55, 55, 62)"
+export const COLOR_BLACK_3 = "rgb(47, 47, 53)"
+export const COLOR_BLACK_4 = 'rgb(27, 27, 27)'
 
 // Font sizes
 export const SIZE_3XS = 13.5

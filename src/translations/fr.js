@@ -1,4 +1,12 @@
 export default {
+  menu: {
+    PickedForMe: 'Choisi pour moi',
+    Following: 'Abonnements',
+    Premium: 'Premium',
+    Parameters: 'Paramètres',
+    About: 'À propos',
+    Terms: 'Conditions',
+  },
   labels: {
     startReading: "Commencer à lire",
   },

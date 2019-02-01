@@ -5,6 +5,7 @@ import { actions } from 'store/symbiotes/Initialization'
 
 const mapStateToProps = (state) => ({
   theme: state.theme.current,
+  checkedIn: state.user.checkedIn,
 })
 
 const mapDispatchToProps = (dispatch, props) =>{

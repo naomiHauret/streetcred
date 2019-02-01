@@ -1,12 +1,13 @@
 import React from 'react'
-import { TouchableHighlight, Text, View } from 'react-native'
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { wrap } from "react-native-style-tachyons"
+import { TouchableOpacity, Text, View, Dimensions } from 'react-native'
+import { BoxShadow } from 'expo-react-native-shadow'
+import { MaterialCommunityIcons, Octicons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
-import { actions as TranslationActions } from 'store/symbiotes/Translation'
 import { actions as NavigatorActions } from 'store/symbiotes/Navigator'
+import { Transition } from 'react-navigation-fluid-transitions'
 
 const mapStateToProps = (state) => ({
-  i18n: state.translation.i18n,
   activeBottomTab: state.navigator.activeBottomTab,
   theme: state.theme.current,
 })
@@ -15,27 +16,57 @@ const mapDispatchToProps = (dispatch, props) => ({
   changeTab: (payload) => dispatch(NavigatorActions.changeTab(payload))
 })
 
+const themeSystem = {
+  backgrounds: {
+    light: 'bg-white-0',
+    dark: 'bg-black-2',
+  },
+  colors: {
+    dark: 'white-0',
+    light: 'black-1',
+  },
+}
+
 const TabBarBottom = props => {
-  const { navigation, changeTab, activeBottomTab, activeTintColor, inactiveTintColor } = props
+  const { navigation, changeTab, activeBottomTab, activeTintColor, inactiveTintColor, theme } = props
+  const height = 50
   return (
-    <View style={{ backgroundColor: "#fff", flexDirection: "row" }}>
+    <BoxShadow setting={{
+      width: Dimensions.get('window').width,
+      height,
+      color: "#417CB2",
+      border: 2,
+      radius: 0,
+      opacity: 0.09,
+      x: 0,
+      y: -1,
+    }}>
+    <View style={{ height }} cls={`flxdr ${themeSystem.backgrounds[theme]}`} >
     {
       navigation.state.routes.map(route => {
-          return (route.params && route.params.hidden === true ) ? null :
-            <TouchableHighlight style={{ flex: 1 }} key={route.key} onPress={() => {
+          return (route.params && route.params.hidden === true) ? null : <TouchableOpacity style={{height: '100%', }} cls='flx-i jcc aic' key={route.key} onPress={() => {
               changeTab(route.key)
               navigation.navigate(route.key)
             }}>
-              <MaterialCommunityIcons color={activeBottomTab === route.key ? activeTintColor : inactiveTintColor } name={route.params.icon} />
-            </TouchableHighlight>
+              <Text style={{marginTop: activeBottomTab === route.key ? -10 : 0 }} cls={`asc ${themeSystem.colors[theme]} ${activeBottomTab === route.key ? "o-100" : "o-30"}`}>
+
+              <MaterialCommunityIcons size={24} name={route.params.icon} />
+            </Text>
+              {activeBottomTab === route.key &&
+                <Transition appear="bottom">
+                <Octicons cls="blue-0 absolute" style={{bottom: 1.5}} name='primitive-dot' size={15} />
+              </Transition>
+              }
+            </TouchableOpacity>
           }
         )
       }
-    </View>
+      </View>
+      </BoxShadow>
   )
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TabBarBottom)
+)(wrap(TabBarBottom))

@@ -7,7 +7,6 @@ import {
   createAppContainer,
 } from "react-navigation"
 import ArticleScreen from "screens/Article"
-import FirstTimeScreen from "screens/FirstTime"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
 import AboutScreen from "screens/About"
@@ -16,10 +15,7 @@ import BookmarkedScreen from "screens/Bookmarked"
 import PickedForMeScreen from "screens/PickedForMe"
 import FollowingScreen from "screens/Following"
 import TabBarBottom from "components/wired/TabBarBottom"
-
-const InitialStack = createSwitchNavigator({
-  FirstTime: FirstTimeScreen,
-})
+import TabBarTop from "components/wired/TabBarTop"
 
 const FeedStack = createMaterialTopTabNavigator({
   PickedForMe: {
@@ -34,7 +30,9 @@ const FeedStack = createMaterialTopTabNavigator({
       key: "feed",
     },
   },
-})
+},  {
+    tabBarComponent: (props) => <TabBarTop {...props} />,
+  },)
 
 const MoreStack = createMaterialTopTabNavigator({
   Parameters: {
@@ -55,7 +53,11 @@ const MoreStack = createMaterialTopTabNavigator({
       key: "terms",
     },
   },
-})
+},
+  {
+    tabBarComponent: (props) => <TabBarTop {...props} />,
+  },
+)
 
 const MainStack = createBottomTabNavigator(
   {
@@ -102,13 +104,6 @@ const MainStack = createBottomTabNavigator(
   },
   {
     tabBarComponent: (props) => <TabBarBottom {...props} />,
-    tabBarOptions: {
-      showLabel: false,
-      showIcon: true,
-      inactiveBackgroundColor: "transparent",
-      inactiveTintColor: "blue",
-      activeTintColor: "red",
-    },
   },
 )
 
@@ -117,7 +112,6 @@ const ArticleStack = createStackNavigator({
 })
 
 const AppNavigator = createSwitchNavigator({
-  Init: InitialStack,
   Main: MainStack,
 })
 

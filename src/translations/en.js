@@ -1,4 +1,24 @@
 export default {
+  languages: {
+    en: "English",
+    fr: "French",
+    cn: "Chinese",
+    jp: "Japanese",
+    de: "German",
+    no: "Norwegian",
+    se: "Swedish",
+    pt: "Portuguese",
+    it: "Italian",
+    es: "Spanish",
+    cz: "Czech",
+    ru: "Russian",
+    hu: "Hungarian",
+    fi: "Finnish",
+    ee: "Estonian",
+    lu: "Lithuanian",
+    lv: "Latvian",
+    dk: "Danish",
+  },
   menu: {
     PickedForMe: 'Picked for me',
     Following: 'Following',
@@ -58,5 +78,8 @@ export default {
     health: "Health",
     history: "History",
     miscellaneous: "Miscellaneous",
-  }
+  },
+  messages: {
+    noInternetConnection: 'No internet connection detected',
+  },
 }

@@ -4,13 +4,14 @@ import { initializationReducer as initialization } from 'store/symbiotes/Initial
 import { navigatorReducer as navigator } from 'store/symbiotes/Navigator'
 import { themeReducer as theme } from 'store/symbiotes/Theme'
 import { topicsReducer as topics } from 'store/symbiotes/Topics'
-import { userReducer as user } from 'store/symbiotes/User'
+import { contentReducer as content } from 'store/symbiotes/Content'
+
 export const rootReducer = combineReducers({
   initialization,
   navigator,
   translation,
   theme,
   topics,
-  user,
+  content,
 })
 

@@ -1,4 +1,24 @@
 export default {
+  languages: {
+    en: "Anglais",
+    fr: "Français",
+    cn: "Chinois",
+    jp: "Japonais",
+    de: "Allemand",
+    no: "Norvégien",
+    se: "Suédois",
+    pt: "Portugais",
+    it: "Italien",
+    es: "Espagnol",
+    cz: "Tchèque",
+    ru: "Russe",
+    hu: "Hongrois",
+    fi: "Finnois",
+    ee: "Estonien",
+    lu: "Lituanien",
+    lv: "Letton",
+    dk: "Danois",
+  },
   menu: {
     PickedForMe: 'Choisi pour moi',
     Following: 'Abonnements',
@@ -58,5 +78,8 @@ export default {
     health: "Santé",
     history: "Histoire",
     miscellaneous: "Faits divers",
-  }
+  },
+  messages: {
+    noInternetConnection: 'Aucune connexion internet',
+  },
 }

@@ -10,7 +10,6 @@ import ArticleScreen from "screens/Article"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
 import AboutScreen from "screens/About"
-import TermsScreen from "screens/Terms"
 import BookmarkedScreen from "screens/Bookmarked"
 import PickedForMeScreen from "screens/PickedForMe"
 import FollowingScreen from "screens/Following"
@@ -45,12 +44,6 @@ const MoreStack = createMaterialTopTabNavigator({
     screen: AboutScreen,
     params: {
       key: "about",
-    },
-  },
-  Terms: {
-    screen: TermsScreen,
-    params: {
-      key: "terms",
     },
   },
 },

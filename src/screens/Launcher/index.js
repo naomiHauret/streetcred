@@ -4,7 +4,7 @@ import Screen from './presentational'
 import { actions as TranslationActions} from 'store/symbiotes/Translation'
 import { actions as ThemeActions } from 'store/symbiotes/Theme'
 import { actions as TopicsActions } from 'store/symbiotes/Topics'
-import { actions as UserActions } from 'store/symbiotes/User'
+import { actions as InitializationActions } from 'store/symbiotes/Initialization'
 
 const mapStateToProps = (state) => {
   return ({
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch, props) => {
     changeLocale: (payload) => dispatch(TranslationActions.changeLocale(payload)),
     switchTheme: () => dispatch(ThemeActions.switchTheme()),
     toggleTopicState: (payload) => dispatch(TopicsActions.toggleTopicState(payload)),
-    handleSubmit: () => dispatch(UserActions.checkIn()),
+    handleSubmit: () => dispatch(InitializationActions.checkIn()),
   })
 }
 

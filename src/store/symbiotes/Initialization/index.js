@@ -1,13 +1,23 @@
 import { createSymbiote } from 'redux-symbiote'
 
 const initialState = {
-  ready: false,
+  userHasCheckedIn: false,
+  internetConnection: false,
 }
 
 const symbiotes = {
-  init: state => ({
+  setInternetConnectionStatus: (state, payload) => ({
     ...state,
-    ready: true,
+    internetConnection: payload,
+  }),
+  checkIn: (state) => ({
+    ...state,
+    userHasCheckedIn: true,
+  }),
+  changeConnectionStatus: (state, payload) => ({
+    ...state,
+    internetConnection: payload,
   }),
 }
+
 export const { actions, reducer: initializationReducer } = createSymbiote(initialState, symbiotes, 'app/initialization')

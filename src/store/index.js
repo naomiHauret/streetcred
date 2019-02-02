@@ -8,7 +8,7 @@ const persistConfig = {
   timeout: 0,
   key: "root",
   storage: storage,
-  blacklist: ['navigation'],
+  blacklist: ['navigation', 'navigator'],
   stateReconciler: autoMergeLevel2,
 }
 

@@ -37,7 +37,6 @@ class TabBarTop extends PureComponent {
   render() {
     const { navigation, translation, theme } = this.props
     const { activeTab } = this.state
-    console.log(activeTab)
     const height = 50
     return (
     <BoxShadow setting={{
@@ -50,7 +49,7 @@ class TabBarTop extends PureComponent {
       x: 0,
       y: 1,
     }}>
-      <View style={{ height }} cls={`flxdr ${themeSystem.backgrounds[theme]}`} >
+      <View style={{ height }} cls={`flxdr  ${themeSystem.backgrounds[theme]}`} >
         {
           navigation.state.routes.map(route => {
               return (route.params && route.params.hidden === true) ? null : <TouchableOpacity cls={`flx-i jcc aic ${activeTab === route.key ? "b--blue-0" : ""}`} style={{ height: '100%', borderBottomWidth: activeTab === route.key ? 4 : 0 }} key={route.key} onPress={() => {
@@ -59,7 +58,6 @@ class TabBarTop extends PureComponent {
             }}>
               <Text cls={`asc lt-sm tac b ${themeSystem.colors[theme]} ${activeTab === route.key ? "o-100" : "o-30"}`}>
                 {t(`menu.${route.key}`, translation).toUpperCase()}
-
               </Text>
             </TouchableOpacity>
           }

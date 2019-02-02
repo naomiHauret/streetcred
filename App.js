@@ -21,7 +21,7 @@ NativeTachyons.build({
     ...customStyles,
   }
 }, StyleSheet)
-console.log(NativeTachyons)
+
 export default wrappedApp = () => (
   <ReduxProvider store={store}>
     <PersistGate loading={null} persistor={persistor}>

@@ -64,6 +64,7 @@ export const colors = {
   "black-1": TOKENS.COLOR_BLACK_1,
   "black-2": TOKENS.COLOR_BLACK_2,
   "black-3": TOKENS.COLOR_BLACK_3,
+  "red": TOKENS.COLOR_RED,
   "transparent": "transparent",
 }
 

@@ -1,18 +1,19 @@
 // Colors
 // 0 is the lightest hue
-export const COLOR_WHITE_0 = "rgb(255, 255, 255)"
-export const COLOR_WHITE_1 = "rgb(254, 254, 254)"
-export const COLOR_BLUE_0 = "rgb(127, 194, 255)"
-export const COLOR_BLUE_1 = "rgb(45, 41, 255)"
-export const COLOR_GRAY_0 = "rgb(219, 228, 237)"
-export const COLOR_GRAY_1 = "rgb(193, 193, 195)"
-export const COLOR_GRAY_2 = "rgb(145, 144, 175)"
-export const COLOR_GRAY_3 = "rgb(154, 153, 165)"
-export const COLOR_BLACK_0 = "rgb(81, 80, 116)"
-export const COLOR_BLACK_1 = "rgb(60, 59, 91)"
-export const COLOR_BLACK_2 = "rgb(55, 55, 62)"
-export const COLOR_BLACK_3 = "rgb(47, 47, 53)"
-export const COLOR_BLACK_4 = 'rgb(27, 27, 27)'
+export const COLOR_WHITE_0 = "#ffffff"
+export const COLOR_WHITE_1 = "#fefefe"
+export const COLOR_BLUE_0 = "#7fc2ff"
+export const COLOR_BLUE_1 = "#2d29ff"
+export const COLOR_GRAY_0 = "#dbe4ed"
+export const COLOR_GRAY_1 = "#c1c1c3"
+export const COLOR_GRAY_2 = "#9190af"
+export const COLOR_GRAY_3 = "#9a99a5"
+export const COLOR_BLACK_0 = "#515074"
+export const COLOR_BLACK_1 = "#3c3b5b"
+export const COLOR_BLACK_2 = "#37373e"
+export const COLOR_BLACK_3 = "#2f2f35"
+export const COLOR_BLACK_4 = '#1b1b1b'
+export const COLOR_RED = '#ff285e'
 
 // Font sizes
 export const SIZE_3XS = 13.5

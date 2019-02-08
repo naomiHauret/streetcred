@@ -7,7 +7,6 @@ import MessageOffline from 'components/wired/MessageOffline'
 import Navigator from 'navigator'
 import { accessToken, apiEndpoint } from 'utils/content'
 import Prismic from 'prismic-javascript'
-import JsonFunction from "json-function";
 
 export default wrap(
   class App extends PureComponent {
@@ -15,8 +14,7 @@ export default wrap(
       Prismic.api(apiEndpoint, { accessToken }).then(api => {
         api.query(Prismic.Predicates.at('document.type', 'article')).then(response => {
           if (response) {
-            console.log(response.results)
-
+            // console.log(response.results)
           }
         })
       })

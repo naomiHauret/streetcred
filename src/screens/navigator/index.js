@@ -29,9 +29,9 @@ const FeedStack = createMaterialTopTabNavigator({
       key: "feed",
     },
   },
-}, {
+},  {
     tabBarComponent: (props) => <TabBarTop {...props} />,
-  }, )
+  },)
 
 const MoreStack = createMaterialTopTabNavigator({
   Parameters: {

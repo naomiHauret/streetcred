@@ -38,17 +38,19 @@ class TabBarTop extends PureComponent {
     const { navigation, translation, theme } = this.props
     const { activeTab } = this.state
     const height = 50
-    return (
-    <BoxShadow setting={{
+    const shadowStyle = {
       width: Dimensions.get('window').width,
       height,
       color: "#417CB2",
-      border: 2,
+      border: 1,
       radius: 0,
       opacity: 0.09,
       x: 0,
-      y: 1,
-    }}>
+      y: 1.5,
+      style: { marginBottom: 1 }
+    }
+    return (
+    <BoxShadow setting={shadowStyle}>
       <View style={{ height }} cls={`flxdr  ${themeSystem.backgrounds[theme]}`} >
         {
           navigation.state.routes.map(route => {

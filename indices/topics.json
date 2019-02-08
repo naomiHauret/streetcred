@@ -1,0 +1,833 @@
+[
+  {
+
+    "id": "travel",
+    "en": "travel",
+    "fr": "voyage",
+    "related": [
+      "lifestyle",
+      "style de vie",
+      "cook",
+      "cuisine",
+      "nature",
+      "animals",
+      "food",
+      "bien-être",
+      "tourism"
+    ]
+  },
+  {
+    "id": "videogames",
+    "en": "video games",
+    "fr": "jeux vidéos"
+  },
+  {
+    "id": "food",
+    "en": "food",
+    "fr": "nourriture",
+    "related": [
+      "vegan",
+      "veganism",
+      "vegetarian",
+      "all equals",
+      "carnivor",
+      "tourism",
+      "health",
+      "santé",
+      "animal rights",
+      "lifestyle",
+      "style de vie",
+      "cook",
+      "cuisine",
+      "animals"
+    ]
+  },
+  {
+    "id": "economics",
+    "en": "economics",
+    "fr": "économie",
+    "related": [
+      "argent",
+      "money",
+      "capitalism",
+      "industrie",
+      "tech",
+      "tourism",
+      "artificial intelligence",
+      "agriculture"
+    ]
+  },
+  {
+    "id": "politics",
+    "en": "politics",
+    "fr": "politique",
+    "related": [
+      "world news", "actualités mondiales", "onu", "otan", "mongolie", "états-unis", "united states", "france", "china", "japan", "brasil", "australia", "kenya", "all equals", "all life matters", "humans first", "animal rights", "saudia arabia", "estonia", "latvia", "lithuania", "germany", "netherlands", "allemagne", "pays-bas", "europe", "amérique", "asie", "afrique"
+    ]
+  },
+
+  {
+    "id": "tech",
+    "en": "tech",
+    "fr": "tech",
+    "related": []
+  },
+  {
+    "id": "ai",
+    "en": "artificial intelligence",
+    "fr": "intelligence artificielle",
+    "related": []
+  },
+  {
+    "id": "robotics",
+    "en": "robotics",
+    "fr": "robotique",
+    "related": []
+  },
+  {
+    "id": "sex",
+    "en": "sex",
+    "fr": "sexe",
+    "related": []
+  },
+  {
+    "id": "love",
+    "en": "love",
+    "fr": "amour",
+    "related": []
+  },
+  {
+    "id": "psychology",
+    "en": "psychology",
+    "fr": "psychologie",
+    "related": []
+  },
+  {
+    "id": "usa",
+    "en": "usa",
+    "fr": "états-unis",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "france",
+    "en": "france",
+    "fr": "france",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "japan",
+    "en": "japan",
+    "fr": "japon",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "brasil",
+    "en": "brasil",
+    "fr": "brésil",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "germany",
+    "en": "germany",
+    "fr": "allemagne",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "netherlands",
+    "en": "netherlands",
+    "fr": "netherlands",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "australia",
+    "en": "australia",
+    "fr": "australie",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "kenya",
+    "en": "kenya",
+    "fr": "kenya",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "slovenia",
+    "en": "slovenia",
+    "fr": "slovenia",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "slovakia",
+    "en": "slovakia",
+    "fr": "slovaquie",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "switzerland",
+    "en": "switzerland",
+    "fr": "suisse",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "music",
+    "en": "music",
+    "fr": "musique",
+    "related": []
+  },
+  {
+    "id": "lifestyle",
+    "en": "lifestyle",
+    "fr": "style de vie",
+    "related": []
+  },
+  {
+    "id": "home",
+    "en": "home",
+    "fr": "maison",
+    "related": []
+  },
+  {
+    "id": "pet",
+    "en": "pet",
+    "fr": "animal de compagnie",
+    "related": []
+  },
+  {
+    "id": "beauty",
+    "en": "beauty",
+    "fr": "beauté",
+    "related": []
+  },
+  {
+    "id": "baby",
+    "en": "baby",
+    "fr": "bébé",
+    "related": []
+  },
+  {
+    "id": "family",
+    "en": "family",
+    "fr": "famille",
+    "related": []
+  },
+  {
+    "id": "work",
+    "en": "work",
+    "fr": "travail",
+    "related": []
+  },
+  {
+    "id": "socialmedia",
+    "en": "social media",
+    "fr": "réseaux sociaux",
+    "related": []
+  },
+  {
+    "id": "china",
+    "en": "china",
+    "fr": "chine",
+    "related": [
+      "world news",
+      "actualités mondiales",
+      "onu",
+      "otan",
+      "mongolie",
+      "états-unis",
+      "united states",
+      "france",
+      "china",
+      "japan",
+      "brasil",
+      "australia",
+      "kenya",
+      "all equals",
+      "all life matters",
+      "humans first",
+      "animal rights",
+      "saudia arabia",
+      "estonia",
+      "latvia",
+      "lithuania",
+      "germany",
+      "netherlands",
+      "allemagne",
+      "pays-bas",
+      "europe",
+      "amérique",
+      "asie",
+      "afrique"
+    ]
+  },
+  {
+    "id": "voice",
+    "en": "voice",
+    "fr": "voice",
+    "related": []
+  },
+  {
+    "id": "tourism",
+    "en": "tourism",
+    "fr": "tourisme",
+    "related": []
+  },
+  {
+    "id": "death",
+    "en": "death",
+    "fr": "mort",
+    "related": []
+  },
+  {
+    "id": "fashion",
+    "en": "fashion",
+    "fr": "mode",
+    "related": []
+  },
+  {
+    "id": "ethics",
+    "en": "ethics",
+    "fr": "éthique",
+    "related": []
+  },
+  {
+    "id": "law",
+    "en": "law",
+    "fr": "loi",
+    "related": []
+  },
+  {
+    "id": "society",
+    "en": "society",
+    "fr": "société",
+    "related": []
+  },
+  {
+    "id": "worldnews",
+    "en": "world news",
+    "fr": "actualités mondiales",
+    "related": []
+  },
+  {
+    "id": "culture",
+    "en": "culture",
+    "fr": "culture",
+    "related": []
+  },
+  {
+    "id": "art",
+    "en": "art",
+    "fr": "art",
+    "related": []
+  },
+  {
+    "id": "series",
+    "en": "series",
+    "fr": "série",
+    "related": []
+  },
+  {
+    "id": "movies",
+    "en": "movies",
+    "fr": "film",
+    "related": []
+  },
+  {
+    "id": "sports",
+    "en": "sports",
+    "fr": "sport",
+    "related": []
+  },
+  {
+    "id": "sciences",
+    "en": "sciences",
+    "fr": "sciences",
+    "related": []
+  },
+  {
+    "id": "health",
+    "en": "health",
+    "fr": "santé",
+    "related": []
+  },
+  {
+    "id": "history",
+    "en": "history",
+    "fr": "histoire",
+    "related": []
+  },
+  {
+    "id": "miscellaneous",
+    "en": "miscellaneous",
+    "fr": "faits divers",
+    "related": []
+  },
+  {
+    "id": "people",
+    "en": "people",
+    "fr": "personnalité",
+    "related": []
+  },
+  {
+    "id": "terrorism",
+    "en": "terrorism",
+    "fr": "terrorisme",
+    "related": []
+  },
+  {
+    "id": "scandal",
+    "en": "scandal",
+    "fr": "scandale",
+    "related": []
+  },
+  {
+    "id": "animals",
+    "en": "animals",
+    "fr": "animals",
+    "related": []
+  },
+
+  {
+    "id": "nature",
+    "en": "nature",
+    "fr": "nature",
+    "related": []
+  },
+  {
+    "id": "ecology",
+    "en": "ecology",
+    "fr": "écologie",
+    "related": [
+
+    ]
+  },
+  {
+    "id": "veganism",
+    "en": "veganism",
+    "fr": "véganisme",
+    "related": [
+      "animals rights",
+      "all equals",
+      "all life matters",
+      "veganism",
+      "food",
+      "cook",
+      "cuisine",
+      "bien-être",
+      "santé",
+      "health",
+      "ecology",
+      "nature"
+    ]
+  },
+  {
+    "id": "animalrights",
+    "en": "animal rights",
+    "fr": "droits des animaux",
+    "related": [
+      "voice",
+      "actualités mondiales",
+      "world news",
+      "artificial intelligence",
+      "intelligence artificielle",
+      "animals rights",
+      "all equals",
+      "all life matters",
+      "politique",
+      "politics",
+      "veganism",
+      "food",
+      "cook",
+      "cuisine",
+      "ecology",
+      "nature",
+      "tourisme",
+      "prostitution",
+      "scandale"
+    ]
+  },
+  {
+    "id": "vegetarism",
+    "en": "vegetarism",
+    "fr": "végétarisme",
+    "related": [
+      "animals rights",
+      "all equals",
+      "all life matters",
+      "veganism",
+      "food",
+      "cook",
+      "cuisine",
+      "bien-être",
+      "santé",
+      "health",
+      "ecology",
+      "nature"
+    ]
+  },
+  {
+    "id": "humansfirst",
+    "en": "humans first",
+    "fr": "humans first",
+    "related": [
+      "animals rights",
+      "veganism",
+      " vegetarism",
+      "law",
+      "loi",
+      "politics"
+    ]
+  },
+  {
+    "id": "allequals",
+    "en": "all equals",
+    "fr": "all equals",
+    "related": [
+      "animals rights", "veganism"," vegetarism", "law", "loi", "politics"
+    ]
+  },
+  {
+    "id": "religion",
+    "en": "religion",
+    "fr": "religion",
+    "related": [
+      "dieu", "god"
+    ]
+  },
+  {
+    "id": "pornography",
+    "en": "pornography",
+    "fr": "pornographie",
+    "related": [
+      "scandal", "sex", "law", "loi", "prostitution"
+    ]
+  }
+]

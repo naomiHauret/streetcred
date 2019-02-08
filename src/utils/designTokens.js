@@ -8,11 +8,13 @@ export const COLOR_GRAY_0 = "#dbe4ed"
 export const COLOR_GRAY_1 = "#c1c1c3"
 export const COLOR_GRAY_2 = "#9190af"
 export const COLOR_GRAY_3 = "#9a99a5"
+export const COLOR_GRAY_4 = '#AFCCE8'
 export const COLOR_BLACK_0 = "#515074"
 export const COLOR_BLACK_1 = "#3c3b5b"
 export const COLOR_BLACK_2 = "#37373e"
 export const COLOR_BLACK_3 = "#2f2f35"
 export const COLOR_BLACK_4 = '#1b1b1b'
+export const COLOR_BLACK_5 = '#000000'
 export const COLOR_RED = '#ff285e'
 
 // Font sizes

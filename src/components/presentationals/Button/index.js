@@ -33,7 +33,7 @@ const themeSystem = {
     },
   },
   fontSizes: {
-    sm: 'fs-sm',
+    sm: 'fs-3xs',
     default: 'fs-r',
     xl: "fs-xl",
   },
@@ -82,12 +82,13 @@ export default wrap(
       disabled: false,
       margins: 'ma0',
       align: 'center',
+      bold: false,
     }
     render() {
-      const { children, theme, size, radius, inverted, uppercase, handleOnPress, disabled, margins, align } = this.props
+      const { children, theme, size, radius, inverted, uppercase, handleOnPress, disabled, margins, align, bold } = this.props
       const letterSpacing = !uppercase ? themeSystem.letterSpacings.default : size === 'xl' ? themeSystem.letterSpacings.lg : size === 'default' ? themeSystem.letterSpacings.sm : themeSystem.letterSpacings.xs
       return <TouchableOpacity {...this.props} onPress={handleOnPress} cls={`ba ${margins} ${disabled === true ? 'o-50' : 'o-100' } ${themeSystem.backgrounds[theme].inverted[inverted]} ${themeSystem.borders[theme].inverted[inverted]} ${themeSystem.radius[radius]}`}>
-        <Text spacing={letterSpacing} paddings={themeSystem.paddings[size]} uppercase={uppercase} theme={themeSystem.colors[theme].inverted[inverted]} size={themeSystem.fontSizes[size]}>
+        <Text bold={bold} spacing={letterSpacing} paddings={themeSystem.paddings[size]} uppercase={uppercase} theme={themeSystem.colors[theme].inverted[inverted]} size={themeSystem.fontSizes[size]}>
           {children}
         </Text>
       </TouchableOpacity>

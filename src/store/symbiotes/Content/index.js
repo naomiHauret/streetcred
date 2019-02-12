@@ -1,17 +1,22 @@
 import { createSymbiote } from 'redux-symbiote'
 import { accessToken, apiEndpoint } from 'utils/content'
-//
-// Handle UI appearance of bottom navbar
 
 const initialState = {
   loading: false,
   articles: {},
   current: null,
+  error: false,
 }
 
 const symbiotes = {
   load: (state) => ({
+    ...state,
     loading: true,
+  }),
+  errorOnLoad: (state) => ({
+    ...state,
+    loading: false,
+    error: true,
   }),
   setArticles: (state, payload) => ({
     ...state,

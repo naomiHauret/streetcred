@@ -17,14 +17,14 @@ import TabBarBottom from "components/wired/TabBarBottom"
 import TabBarTop from "components/wired/TabBarTop"
 
 const FeedStack = createMaterialTopTabNavigator({
-  Following: {
-    screen: FollowingScreen,
+  PickedForMe: {
+    screen: PickedForMeScreen,
     params: {
       key: "feed",
     },
   },
-  PickedForMe: {
-    screen: PickedForMeScreen,
+  Following: {
+    screen: FollowingScreen,
     params: {
       key: "feed",
     },

@@ -18,6 +18,7 @@ export const COLOR_BLACK_5 = '#000000'
 export const COLOR_RED = '#ff285e'
 
 // Font sizes
+export const SIZE_4XS = 12
 export const SIZE_3XS = 13.5
 export const SIZE_2XS = 14
 export const SIZE_XS = 15

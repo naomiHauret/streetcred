@@ -23,13 +23,14 @@ export default wrap(
     }
 
     render() {
-      const { translation, topics, theme, toggleTopicState, query, list } = this.props
+      const { translation, topics, theme, toggleTopicState, query, list, searchResultNumber, addToast } = this.props
       const { searchQuery } = this.state
-      const renderList = list.length === 0 ? Object.values(topics).filter(el => el.followed === true) : list
+      const followedList = Object.values(topics).filter(el => el.followed === true)
+      const renderList = list.length === 0 ? followedList : list
 
       return (
         <Fragment>
-          <View style={{height: 55 }} cls='mt2 ph2'>
+          <View style={{height: 45 }} cls='mt3 ph2'>
             <SearchBar
               block={false}
               size="regular"
@@ -41,6 +42,14 @@ export default wrap(
               />
           </View>
             <Body>
+            <Text cls='b fs-4xs gray-2'>
+              {query.trim() === "" ?
+              t(`labels.${list.length > 1 ? "multipleFollow" : "singleFollow"}`, translation, { number: list.length })
+              :
+                t(`labels.${searchResultNumber > 1 ? "multipleResults" : searchResultNumber === 0 ? "noResults" : "singleResult"}`, translation, { number: searchResultNumber, query: searchQuery })
+            }
+            </Text>
+
               <FlatList
                 data={renderList}
                 keyExtractor={(item, index) => typeof item === 'object' ? item.id : item}
@@ -53,11 +62,23 @@ export default wrap(
                   if(typeof item === 'object') {
                     followed = topics[item.id].followed === true
                     topicName = t(`topics.${item.id}`, translation)
-                    handle = () => toggleTopicState(item.id)
+                    handle = () => {
+                      addToast({
+                        id: Date.now(),
+                        text: followed ? t(`messages.unfollowSuccess`, translation, { topic: topicName }) :  t(`messages.followSuccess`, translation, { topic: topicName })
+                      })
+                      return toggleTopicState(item.id)
+                    }
                   } else {
                     followed = topics[item].followed === true
                     topicName = t(`topics.${item}`, translation)
-                    handle = () => toggleTopicState(item)
+                    handle = () => {
+                      addToast({
+                        id: Date.now(),
+                        text: followed ? t(`messages.unfollowSuccess`, translation, { topic: topicName }) : t(`messages.followSuccess`, translation, { topic: topicName })
+                      })
+                      return toggleTopicState(item)
+                    }
                   }
                   const buttonLabel = followed ? t('labels.following', translation) : t('labels.follow', translation)
 

@@ -1,4 +1,5 @@
 export default {
+  test: '%super% en français',
   languages: {
     en: "Anglais",
     fr: "Français",
@@ -32,11 +33,19 @@ export default {
     searchTopics: "Chercher un sujet...",
     following: "Suivi",
     follow: "Suivre",
-    relatedToYourSearch: "En lien avec votre recherche",
-    noResults: "Aucun résultats pour ceci "
+    singleFollow: "%number% abonnement",
+    multipleFollow: "%number% abonnements",
+    singleResult: "%number% résultat pour %query%",
+    multipleResults: "%number% résultats pour %query%",
+    noResults: "Aucun résultat pour %query%",
   },
   texts: {
     pickTopics: "Choisissez les sujets qui vous intéressent",
+  },
+  messages: {
+    noInternetConnection: 'Aucune connexion internet',
+    followSuccess: 'Vous suivez désormais le thème %topic%',
+    unfollowSuccess: 'Vous ne suivez plus le thème %topic%',
   },
   topics: {
     travel: "Voyage",
@@ -107,9 +116,7 @@ export default {
     allequals: "All equals",
     religion: "Religion",
     animalrights: "Droits des animaux",
-    pornography: "Pornographie",
+    adultentertainment: "Pour adultes",
   },
-  messages: {
-    noInternetConnection: 'Aucune connexion internet',
-  },
+
 }

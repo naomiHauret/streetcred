@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
-import { TextInput as NativeTextInput, TouchableHighlight, View } from 'react-native'
+import { TextInput as NativeTextInput, TouchableOpacity, View } from 'react-native'
 import { wrap, styles as s } from "react-native-style-tachyons"
 import {
   Ionicons
  } from '@expo/vector-icons'
+import { COLOR_BLACK_0, COLOR_GRAY_3 } from "utils/designTokens"
 
 const themeSystem = {
   radius: {
@@ -33,8 +34,8 @@ const themeSystem = {
     light: 'black-1',
   },
   placeholders: {
-    dark: 'black-0',
-    light: 'gray-3',
+    dark: COLOR_BLACK_0,
+    light: COLOR_GRAY_3,
   }
 }
 
@@ -65,15 +66,16 @@ export default wrap(
             autoCorrect={false}
             autoCapitalize={'none'}
             cls={`flx-i`}
+            placeholderTextColor={`${themeSystem.placeholders[theme]}`}
           />
           <View style={{ width: 50 }} cls='aife pv2 pr2'>
-            {this.state.text.trim() !== '' ? <TouchableHighlight onPress={() => {
+            {this.state.text.trim() !== '' ? <TouchableOpacity onPress={() => {
               this.handleChange('')
               return onInput('')
             }
             }>
               <Ionicons name="ios-close-circle" cls='blue-0' size={20} />
-              </TouchableHighlight> : <Ionicons name="ios-search" cls='blue-0' size={20} />
+              </TouchableOpacity> : <Ionicons name="ios-search" cls='blue-0' size={20} />
             }
           </View>
         </View>

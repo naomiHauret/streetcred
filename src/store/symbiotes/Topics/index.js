@@ -13,6 +13,7 @@ const initialState = {
   topicToFollowQuery: "",
   list: topics,
   renderList: [],
+  queryResult: null,
 }
 
 const symbiotes = {
@@ -41,7 +42,8 @@ const symbiotes = {
     return {
       ...state,
       topicToFollowQuery: payload.query,
-      renderList: newRenderList
+      renderList: newRenderList,
+      queryResult: searchResult.length,
     }
   },
   toggleTopicState: (state, payload) => {

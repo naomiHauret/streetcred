@@ -2,6 +2,7 @@ import { sizes } from "react-native-style-tachyons"
 import * as TOKENS from "utils/designTokens"
 
 const fontSizes = {
+  "fs-4xs": TOKENS.SIZE_4XS,
   "fs-3xs": TOKENS.SIZE_3XS,
   "fs-2xs": TOKENS.SIZE_2XS,
   "fs-xs": TOKENS.SIZE_XS,
@@ -82,6 +83,9 @@ export const customStyles = {
     textAlign: 'center',
   },
   'flxw': {
-    flexWrap: 'wrap'
-  }
+    flexWrap: 'wrap',
+  },
+  'w100vw': {
+    width: '100%',
+  },
 }

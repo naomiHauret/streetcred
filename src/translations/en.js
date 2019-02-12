@@ -31,10 +31,17 @@ export default {
     startReading: "Start reading",
     searchTopics: "Search a topic...",
     relatedToYourSearch: "Related to your research",
-    noResults: "No results for this "
+    singleResult: "%number% result for %query%",
+    multipleResults: "%number% results for %query%",
+    noResults: "No results %query%",
   },
   texts: {
     pickTopics: "Pick topics you want to read about",
+  },
+  messages: {
+    noInternetConnection: 'No internet connection detected',
+    followSuccess: '',
+    unfollowSuccess: 'You unfollow %topic%',
   },
   topics: {
     travel: "Travel",
@@ -105,9 +112,6 @@ export default {
     allequals: "All equals",
     religion: "Religion",
     animalrights: "Animal rights",
-    pornography: "Pornography",
-  },
-  messages: {
-    noInternetConnection: 'No internet connection detected',
+    adultentertainment: "Adult entertainment",
   },
 }

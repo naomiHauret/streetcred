@@ -823,11 +823,11 @@
     ]
   },
   {
-    "id": "pornography",
-    "en": "pornography",
-    "fr": "pornographie",
+    "id": "adultentertainment",
+    "en": "adultentertainment",
+    "fr": "pour adulte",
     "related": [
-      "scandal", "sex", "law", "loi", "prostitution"
+      "scandal", "sex", "law", "loi", "prostitution", "porn", "porno", "pornography", "pornographie"
     ]
   }
 ]

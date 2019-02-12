@@ -19,7 +19,7 @@ export default [
   "sex",
   "love",
   "psychology",
-  "pornography",
+  "adultentertainment",
   "usa",
   "france",
   "japan",

@@ -31,6 +31,7 @@ const FeedStack = createMaterialTopTabNavigator({
   },
 }, {
     tabBarComponent: (props) => <TabBarTop {...props} />,
+    swipeEnabled: false,
   }, )
 
 const MoreStack = createMaterialTopTabNavigator({
@@ -49,6 +50,7 @@ const MoreStack = createMaterialTopTabNavigator({
 },
   {
     tabBarComponent: (props) => <TabBarTop {...props} />,
+    swipeEnabled: false
   },
 )
 

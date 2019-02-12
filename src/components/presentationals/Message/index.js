@@ -1,7 +1,8 @@
 import React, { PureComponent, Fragment } from 'react'
-import  { View, Text } from 'react-native'
+import  { View, Text, TouchableOpacity } from 'react-native'
 import { wrap } from 'react-native-style-tachyons'
-import { Transition } from 'react-navigation-fluid-transitions'
+import PropTypes from 'prop-types'
+import { Ionicons } from '@expo/vector-icons'
 
 const themeSystem = {
   backgrounds: {
@@ -11,20 +12,31 @@ const themeSystem = {
 }
 
 class Message extends PureComponent {
-  state = {
-    show: true,
+  componentDidMount() {
+    const { closable, onClose } = this.props
+    closable === true && setTimeout(onClose, 5000)
   }
   render() {
-    const { children, theme } = this.props
-    const { show } = this.state
-    return show !== true ? <Fragment/> : <Transition appear="flip" disappear="flip">
-      <View cls={`${themeSystem.backgrounds[theme]} pa2 jcc aic`}>
-        <Text cls='white-0'>
+    const { children, theme, closable, onClose } = this.props
+    return  <View cls={`${themeSystem.backgrounds[theme]} pa2 jcc aic flxdr jcsb w100vw`}>
+        <Text cls='white-0 tc ph3'>
           {children}
         </Text>
+        {closable === true && <TouchableOpacity cls='ph2 absolute' style={{ right: 0 }} onPress={onClose}>
+          <Ionicons name="ios-close" size={25} cls="white-0" />
+        </TouchableOpacity>}
       </View>
-    </Transition>
   }
+}
+
+Message.propTypes = {
+  theme: PropTypes.oneOf(['info', 'alert']).isRequired,
+  closable: PropTypes.bool.isRequired,
+}
+
+Message.defaultProps = {
+  theme: "info",
+  closable: false,
 }
 
 export default wrap(Message)

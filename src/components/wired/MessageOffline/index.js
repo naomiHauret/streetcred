@@ -42,7 +42,7 @@ class MessageOffline extends PureComponent {
     const { translation } = this.props
     const { isConnected } = this.state
     if (!isConnected) {
-      return <Message theme='alert' show={true} closable={false} >
+      return <Message theme='alert' closable={false} >
         {t('messages.noInternetConnection', translation)}
     </Message>
     }

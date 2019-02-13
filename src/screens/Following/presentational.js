@@ -44,7 +44,7 @@ export default wrap(
             <Body>
             <Text cls='b fs-4xs gray-2'>
               {query.trim() === "" ?
-              t(`labels.${list.length > 1 ? "multipleFollow" : "singleFollow"}`, translation, { number: list.length })
+              t(`labels.${list.length > 1 ? "multipleFollow" : "singleFollow"}`, translation, { number: renderList.length })
               :
                 t(`labels.${searchResultNumber > 1 ? "multipleResults" : searchResultNumber === 0 ? "noResults" : "singleResult"}`, translation, { number: searchResultNumber, query: searchQuery })
             }

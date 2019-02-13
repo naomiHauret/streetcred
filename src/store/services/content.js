@@ -5,7 +5,7 @@ import { accessToken, apiEndpoint, linkResolver, htmlSerializer } from 'utils/co
 //
 // Fetch articles from Prismic API
 
-export const fetch = (load, onSuccess, onFail) => {
+export const fetch = (load, onSuccess, onFail, topics) => {
   load() // loader ON
   Prismic.api(apiEndpoint, { accessToken }).then(api => {
     api.query(Prismic.Predicates.at('document.type', 'article')).then(response => {
@@ -20,15 +20,13 @@ export const fetch = (load, onSuccess, onFail) => {
             newArticle.host = result.data.host
             newArticle.originalLanguage = result.data.original_language
             newArticle.publicationDate = result.data.publication_date
+            newArticle.category = result.data.category
             newArticle.tags = result.tags
             newArticle.content = PrismicDOM.RichText.asHtml(result.data.content, linkResolver, htmlSerializer)
-            newArticle.reading = false
-            newArticle.complete = false
-            newArticle.bookmarked = false
             articles[result.id] = newArticle
           })
 
-          onSuccess(articles) // set fresh articles list
+          onSuccess({articles, topics }) // set fresh articles list
       } else {
         return onFail // error
       }

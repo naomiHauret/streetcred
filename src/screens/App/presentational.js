@@ -6,16 +6,10 @@ import * as THEMES from 'utils/theme'
 import Launcher from "screens/Launcher"
 import MessageOffline from 'components/wired/MessageOffline'
 import Message from 'components/presentationals/Message'
-import Navigator from 'navigator'
-import { fetch } from 'store/services/content'
+import AppNavigator from 'components/wired/AppNavigator'
 
 export default wrap(
   class App extends PureComponent {
-    componentWillMount() {
-      const { setArticles, errorOnLoad, load } = this.props
-      return fetch(load, setArticles, errorOnLoad)
-    }
-
     render() {
       const { theme, userHasCheckedIn, removeToast, toastrs } = this.props
       const screenTheme = { }
@@ -29,13 +23,13 @@ export default wrap(
             <MessageOffline />
           </Transition>
           {userHasCheckedIn === true ? <Fragment>
-            {toastrs.map((toastr, index) => <Transition appear="left" disappear="right" >
-              <Message theme="info" key={toastr.id} closable={true} onClose={() => removeToast(toastr.id) } >
+            {toastrs.map((toastr, index) => <Transition key={toastr.id} appear="left" disappear="right" >
+              <Message theme="info" closable={true} onClose={() => removeToast(toastr.id) } >
                   {toastr.text}
                 </Message>
               </Transition>
             )}
-            <Navigator />
+            <AppNavigator />
           </Fragment> : <Launcher />}
         </View>
       )

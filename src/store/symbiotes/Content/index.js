@@ -1,11 +1,15 @@
 import { createSymbiote } from 'redux-symbiote'
-import { accessToken, apiEndpoint } from 'utils/content'
+const DAILY_ARTICLES_NUMBER =  5
 
 const initialState = {
   loading: false,
   articles: {},
+  bookmarkedList: [],
+  currentlyReadingList: [],
+  doneReadingList: [],
   current: null,
   error: false,
+  dailyList: {},
 }
 
 const symbiotes = {
@@ -18,42 +22,63 @@ const symbiotes = {
     loading: false,
     error: true,
   }),
-  setArticles: (state, payload) => ({
+  setArticles: (state, payload) => {
+    const { articles, topics } = payload
+
+    // id for our daily
+    const date = new Date()
+    const day = `${date.getUTCFullYear()}/${date.getUTCMonth() + 1}/${date.getUTCDate()}`
+
+   // Daily list article: not in previous daily, not already read or currently read, matches user's interests
+    const dailyList = Object.values(articles).filter(article => {
+      // check is article matches user's interests (topics corresponding to tags of the article)
+      const hasTags = article.tags.map(tag => topics.includes(tag) === true).includes(true) === true
+
+      // check if article isn't already in previous dailies
+      const notInFeedList = Object.values(state.dailyList).map(day => {
+          if(day.includes(article.id) === false) return article.id
+        }
+      )
+      if (hasTags === true && notInFeedList.includes(article.id) === true && state.bookmarkedList.includes(article.id) === false && state.currentlyReadingList.includes(article.id) === false && state.doneReadingList.includes(article.id) === false ) return article
+    }).map(filtered => filtered.id)
+
+        return {
+      ...state,
+      loading: false,
+      articles: articles,
+      dailyList: {
+        ...state.dailyList,
+        [day]: dailyList.length > DAILY_ARTICLES_NUMBER ? dailyList.slice(0, DAILY_ARTICLES_NUMBER - 1) : dailyList,
+      }
+   }
+  },
+  addToBookmarked: (state, payload) => ({
     ...state,
-    loading: false,
-    articles: payload,
+    bookmarkedList: [
+      ...state.bookmarkedList,
+      payload,
+    ],
   }),
-  toggleBookmarked: (state, payload) => ({
+  removeFromBookmarked: (state, payload) => ({
     ...state,
-    articles: {
-      ...state.articles,
-      [payload]: {
-        ...state.articles[payload],
-        bookmarked: !state.articles[payload].bookmarked,
-      },
-    },
+    bookmarkedList: state.bookmarkedList.filter(article => article.id !== payload)
   }),
-  read: (state, payload) => ({
+
+  readArticle: (state, payload) => ({
     ...state,
-    articles: {
-      ...state.articles,
-      [payload]: {
-        ...state.articles[payload],
-        read: true,
-      },
-    },
+    currentlyReadingList: [
+      ...state.currentlyReadingList,
+      payload,
+    ],
     current: payload,
   }),
-  complete: (state, payload) => ({
+  completeArticle: (state, payload) => ({
     ...state,
-    articles: {
-      ...state.articles,
-      [payload]: {
-        ...state.articles[payload],
-        complete: true,
-      },
-    },
-    current: payload,
+    currentlyReadingList: state.currentlyReadingList.filter(article => article.id !== payload),
+    doneReadingList: [
+      ...state.doneReadingList,
+      payload,
+    ]
   }),
 
 }

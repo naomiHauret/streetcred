@@ -24,7 +24,6 @@
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.1",
     "react": "16.5.0",
-    "react-instantsearch-native": "^5.4.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-htmlview": "^0.13.0",
     "react-native-style-tachyons": "^4.0.0",

@@ -9,6 +9,7 @@ export const COLOR_GRAY_1 = "#c1c1c3"
 export const COLOR_GRAY_2 = "#9190af"
 export const COLOR_GRAY_3 = "#9a99a5"
 export const COLOR_GRAY_4 = '#AFCCE8'
+export const COLOR_GRAY_5 = '#6B6B77'
 export const COLOR_BLACK_0 = "#515074"
 export const COLOR_BLACK_1 = "#3c3b5b"
 export const COLOR_BLACK_2 = "#37373e"

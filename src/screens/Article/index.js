@@ -1,21 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { connect } from 'react-redux'
+import Screen from './presentational'
+import { actions as ContentActions } from 'store/symbiotes/Content'
 
-export default class Article extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Article screen</Text>
-      </View>
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  translation: state.translation,
+  theme: state.theme.current,
+  articles: state.content.articles,
+  bookmarkedList: state.content.bookmarkedList,
+  currentlyReadingList: state.content.currentlyReadingList,
+  doneReadingList: state.content.doneReadingList,
+  dailyList: state.content.dailyList,
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const mapDispatchToProps = (dispatch, props) => ({
+  addToBookmarked: (payload) => dispatch(ContentActions.addToBookmarked(payload)),
+  removeFromBookmarked: (payload) => dispatch(ContentActions.removeFromBookmarked(payload)),
+  readArticle: (payload) => dispatch(ContentActions.readArticle(payload)),
+  completeArticle: (payload) => dispatch(ContentActions.completeArticle(payload)),
+})
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Screen)

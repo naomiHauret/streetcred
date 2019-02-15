@@ -1,6 +1,6 @@
 import Prismic from 'prismic-javascript'
 import PrismicDOM from 'prismic-dom'
-import { accessToken, apiEndpoint, linkResolver, htmlSerializer } from 'utils/content'
+import { accessToken, apiEndpoint, linkResolver, htmlSerializer, estimateReadingTime } from 'utils/content'
 
 //
 // Fetch articles from Prismic API
@@ -23,6 +23,7 @@ export const fetch = (load, onSuccess, onFail, topics) => {
             newArticle.category = result.data.category
             newArticle.tags = result.tags
             newArticle.content = PrismicDOM.RichText.asHtml(result.data.content, linkResolver, htmlSerializer)
+            newArticle.durationInMinutes = estimateReadingTime(newArticle.content)
             articles[result.id] = newArticle
           })
 

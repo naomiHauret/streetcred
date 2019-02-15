@@ -1,5 +1,5 @@
 import { createSymbiote } from 'redux-symbiote'
-const DAILY_ARTICLES_NUMBER =  5
+import { DAILY_ARTICLES_NUMBER } from 'utils/const'
 
 const initialState = {
   loading: false,

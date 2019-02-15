@@ -34,9 +34,17 @@ export default {
     singleResult: "%number% result for %query%",
     multipleResults: "%number% results for %query%",
     noResults: "No results %query%",
+    currentRead: "Current read",
+    yourDaily: "Your daily %number%",
+    tiredOfAds: "Tired of ads ?",
+    upgradeToPremium: "Upgrade to premium",
+    payPriceStayPremiumForever: "Pay %price%€ , stay premium forever"
   },
   texts: {
     pickTopics: "Pick topics you want to read about",
+    dailyDescription: "StreetCred scans all of the Web, all day, everyday to pick, source, check and translate articles that match your interests.",
+    freemiumRestriction: "As a freemium user, we bring you 15 articles per day.",
+    goPremium: "To get the best reading experience on StreetCred with unlimited personnalized contents and no ads, please upgrade your plan.",
   },
   messages: {
     noInternetConnection: 'No internet connection detected',

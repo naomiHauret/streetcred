@@ -61,6 +61,8 @@ export const colors = {
   "gray-1": TOKENS.COLOR_GRAY_1,
   "gray-2": TOKENS.COLOR_GRAY_2,
   "gray-3": TOKENS.COLOR_GRAY_3,
+  "gray-4": TOKENS.COLOR_GRAY_4,
+  "gray-5": TOKENS.COLOR_GRAY_5,
   "black-0": TOKENS.COLOR_BLACK_0,
   "black-1": TOKENS.COLOR_BLACK_1,
   "black-2": TOKENS.COLOR_BLACK_2,

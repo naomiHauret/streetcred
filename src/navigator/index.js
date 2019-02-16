@@ -6,6 +6,7 @@ import {
   createMaterialTopTabNavigator,
   createAppContainer,
 } from "react-navigation"
+import { FluidNavigator } from 'react-navigation-fluid-transitions'
 import ArticleScreen from "screens/Article"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
@@ -110,4 +111,8 @@ const AppNavigator = createSwitchNavigator({
   Main: MainStack,
 })
 
-export default (Navigator = createAppContainer(AppNavigator))
+const App = FluidNavigator({
+  App: AppNavigator,
+})
+
+export default (Navigator = createAppContainer(App))

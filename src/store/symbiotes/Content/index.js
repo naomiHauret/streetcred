@@ -61,7 +61,7 @@ const symbiotes = {
   }),
   removeFromBookmarked: (state, payload) => ({
     ...state,
-    bookmarkedList: state.bookmarkedList.filter(article => article.id !== payload)
+    bookmarkedList: state.bookmarkedList.filter(article => article !== payload)
   }),
 
   readArticle: (state, payload) => ({
@@ -74,7 +74,7 @@ const symbiotes = {
   }),
   completeArticle: (state, payload) => ({
     ...state,
-    currentlyReadingList: state.currentlyReadingList.filter(article => article.id !== payload),
+    currentlyReadingList: state.currentlyReadingList.filter(article => article !== payload),
     doneReadingList: [
       ...state.doneReadingList,
       payload,

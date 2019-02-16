@@ -23,7 +23,7 @@ export default wrap(
             <MessageOffline />
           </Transition>
           {userHasCheckedIn === true ? <Fragment>
-            {toastrs.map((toastr, index) => <Transition key={toastr.id} appear="left" disappear="right" >
+            {toastrs.map((toastr, index) => <Transition key={toastr.id} appear="scale" disappear="right" >
               <Message theme="info" closable={true} onClose={() => removeToast(toastr.id) } >
                   {toastr.text}
                 </Message>

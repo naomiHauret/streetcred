@@ -43,7 +43,9 @@ export default {
     tiredOfAds: "Marre des pubs ?",
     upgradeToPremium: "Passer Premium",
     payPriceStayPremiumForever: "Payez %price%€ et devenez premium pour toujours",
-    duration: 'Durée: %duration%min'
+    duration: '%duration%min de lecture',
+    byAuthor: 'par %author%',
+    translatedFromLanguage: 'langue originale: %language%',
   },
   texts: {
     pickTopics: "Choisissez les sujets qui vous intéressent",
@@ -55,6 +57,8 @@ export default {
     noInternetConnection: 'Aucune connexion internet',
     followSuccess: 'Vous suivez désormais le thème %topic%',
     unfollowSuccess: 'Vous ne suivez plus le thème %topic%',
+    removeFromBookmarkedSuccess: '"%article%" a été retiré de votre liste de lecture',
+    addToBookmarkedSuccess: '"%article%" a été ajouté à votre liste de lecture',
   },
   topics: {
     travel: "Voyage",

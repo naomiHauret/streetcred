@@ -38,7 +38,10 @@ export default {
     yourDaily: "Your daily %number%",
     tiredOfAds: "Tired of ads ?",
     upgradeToPremium: "Upgrade to premium",
-    payPriceStayPremiumForever: "Pay %price%€ , stay premium forever"
+    payPriceStayPremiumForever: "Pay %price%€ , stay premium forever",
+    duration: '%duration%min read',
+    byAuthor: 'by %author%',
+    translatedFromLanguage: 'translated from %language%',
   },
   texts: {
     pickTopics: "Pick topics you want to read about",
@@ -50,6 +53,8 @@ export default {
     noInternetConnection: 'No internet connection detected',
     followSuccess: '',
     unfollowSuccess: 'You unfollow %topic%',
+    removeFromBookmarkedSuccess: '"%article%" was removed from your bookmarks',
+    addToBookmarkedSuccess: '"%article%" was added to your bookmarks',
   },
   topics: {
     travel: "Travel",

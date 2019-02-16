@@ -16,7 +16,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch, props) => ({
   addToBookmarked: (payload) => dispatch(ContentActions.addToBookmarked(payload)),
   removeFromBookmarked: (payload) => dispatch(ContentActions.removeFromBookmarked(payload)),
-  readArticle: (payload) => dispatch(ContentActions.readArticle(payload)),
   completeArticle: (payload) => dispatch(ContentActions.completeArticle(payload)),
 })
 

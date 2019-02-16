@@ -14,7 +14,7 @@ const themeSystem = {
 class Message extends PureComponent {
   componentDidMount() {
     const { closable, onClose } = this.props
-    closable === true && setTimeout(onClose, 5000)
+    closable === true && setTimeout(onClose, 10000)
   }
   render() {
     const { children, theme, closable, onClose } = this.props

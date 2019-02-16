@@ -90,4 +90,10 @@ export const customStyles = {
   'w100vw': {
     width: '100%',
   },
+  'flxs1': {
+    flexShrink: 1,
+  },
+  'flxg0': {
+    flexGrow: 0,
+  },
 }

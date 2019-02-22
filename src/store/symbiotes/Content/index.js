@@ -8,7 +8,6 @@ const initialState = {
   bookmarkedList: [], // bookmarked articles list
   currentlyReadingList: [], // articles that are currently read by the user
   doneReadingList: [], // articles already read by the user
-  current: null, // currently read article
   error: false, // loading error
   dailyList: {},  // daily article feed
   pickedList: [], // picked articles
@@ -118,7 +117,6 @@ const symbiotes = {
         id: payload,
       }
     },
-    current: payload,
   }),
 
   // Update reading progression of content in percent
@@ -146,7 +144,13 @@ const symbiotes = {
       payload,
     ]
   }),
-
+  removeFromReadingList: (state, payload) => ({
+    ...state,
+    currentlyReadingList: {
+      ...state.currentlyReadingList,
+      [payload]: undefined
+    },
+  }),
   searchBookmarks: (state, payload) => {
     const query = payload.query
     let options = {

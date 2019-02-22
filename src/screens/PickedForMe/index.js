@@ -18,6 +18,7 @@ const mapDispatchToProps = (dispatch, props) => ({
   addToast: (payload) => dispatch(ToastrActions.add(payload)),
   addToBookmarked: (payload) => dispatch(ContentActions.addToBookmarked(payload)),
   removeFromBookmarked: (payload) => dispatch(ContentActions.removeFromBookmarked(payload)),
+  removeFromReadingList: (payload) => dispatch(ContentActions.removeFromReadingList(payload)),
   readArticle: (payload) => dispatch(ContentActions.readArticle(payload)),
 })
 

@@ -46,6 +46,8 @@ export default {
     translatedFromLanguage: 'langue originale: %language%',
     nothingBookmarked: "Aucun contenu dans votre liste de lecture",
     bookmarked: "Votre liste de lecture",
+    continue: "Continuer",
+    readingLeft: "%percent%% restant ● ~ %time%min"
   },
   placeholders: {
     search: "Rechercher...",

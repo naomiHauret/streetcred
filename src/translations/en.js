@@ -43,6 +43,8 @@ export default {
     translatedFromLanguage: 'translated from %language%',
     nothingBookmarked: "Nothing bookmarked",
     bookmarked: "Your bookmarks",
+    continue: "Continue",
+    readingLeft: "%percent%% left ● ~ %time%min"
   },
   placeholders: {
     search: "Search...",

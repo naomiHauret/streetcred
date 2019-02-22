@@ -76,6 +76,9 @@ export const customStyles = {
   ...customFontSizes,
   ...customRadius,
   ...customLetterSpacings,
+  'nml2': {
+    marginLeft: -9,
+  },
   'flxdr': {
     flexDirection: 'row',
   },
@@ -93,6 +96,9 @@ export const customStyles = {
   },
   'w100vw': {
     width: '100%',
+  },
+  'h100vh': {
+    height: '100%',
   },
   'flxs1': {
     flexShrink: 1,

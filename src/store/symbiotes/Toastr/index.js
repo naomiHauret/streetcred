@@ -5,6 +5,7 @@ const initialState = {
 }
 
 const symbiotes = {
+  // Add a toastr
   add: (state, payload) => ({
     ...state,
     list: [
@@ -12,6 +13,7 @@ const symbiotes = {
       ...state.list,
     ],
   }),
+  // Remove a toastr
   remove: (state, payload) => ({
     ...state,
     list: state.list.filter(toast => toast.id !== payload)

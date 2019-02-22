@@ -57,6 +57,7 @@ export const colors = {
   "white-1": TOKENS.COLOR_WHITE_1,
   "blue-0": TOKENS.COLOR_BLUE_0,
   "blue-1": TOKENS.COLOR_BLUE_1,
+  "blue-2": TOKENS.COLOR_BLUE_2,
   "gray-0": TOKENS.COLOR_GRAY_0,
   "gray-1": TOKENS.COLOR_GRAY_1,
   "gray-2": TOKENS.COLOR_GRAY_2,
@@ -83,6 +84,9 @@ export const customStyles = {
   },
   'tac': {
     textAlign: 'center',
+  },
+  'tal': {
+    textAlign: 'left',
   },
   'flxw': {
     flexWrap: 'wrap',

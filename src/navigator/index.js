@@ -65,6 +65,14 @@ const MainStack = createBottomTabNavigator(
         key: "feed",
       },
     },
+    Bookmarked: {
+      screen: BookmarkedScreen,
+      params: {
+        hidden: false,
+        icon: "bookmark",
+        key: "bookmark",
+      },
+    },
     Explore: {
       screen: ExploreScreen,
       icon: "compass-outline",
@@ -74,14 +82,7 @@ const MainStack = createBottomTabNavigator(
         key: "explore",
       },
     },
-    Bookmarked: {
-      screen: BookmarkedScreen,
-      params: {
-        hidden: false,
-        icon: "bookmark",
-        key: "bookmark",
-      },
-    },
+
     More: {
       screen: MoreStack,
       params: {

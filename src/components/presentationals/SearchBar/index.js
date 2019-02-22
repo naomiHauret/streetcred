@@ -50,7 +50,7 @@ export default wrap(
     }
 
     render() {
-      const { block, size, placeholder, onInput, value, theme, type } = this.props
+      const { placeholder, onInput, value, theme, type } = this.props
 
       return (
         <View cls={`flxdr flx-i jcsb aic ${themeSystem.borders[type][theme]} ${themeSystem.colors[theme]} ${themeSystem.backgrounds[theme]} ${themeSystem.paddings[type]} ${themeSystem.radius[type]}`}>

@@ -4,6 +4,7 @@ export const COLOR_WHITE_0 = "#ffffff"
 export const COLOR_WHITE_1 = "#fefefe"
 export const COLOR_BLUE_0 = "#7fc2ff"
 export const COLOR_BLUE_1 = "#2d29ff"
+export const COLOR_BLUE_2 = '#417CB2'
 export const COLOR_GRAY_0 = "#dbe4ed"
 export const COLOR_GRAY_1 = "#c1c1c3"
 export const COLOR_GRAY_2 = "#9190af"

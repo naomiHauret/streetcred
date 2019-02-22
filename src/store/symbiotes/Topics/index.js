@@ -1,7 +1,7 @@
 import { createSymbiote } from 'redux-symbiote'
 import Fuse from 'fuse.js/src'
 import topicsList from 'utils/topics'
-import topicsSearchDocs from "./../../../../indices/topics.json"
+import topicsSearchDocs from "./../../../../indices/topics.json" // will be used by fuse to search through topics
 
 const topics = {}
 topicsList.map(topic => topics[topic] = {
@@ -41,7 +41,7 @@ const symbiotes = {
     }
     return {
       ...state,
-      topicToFollowQuery: payload.query,
+      topicToFollowQuery: query,
       renderList: newRenderList,
       queryResult: searchResult.length,
     }

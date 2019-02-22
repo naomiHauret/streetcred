@@ -29,7 +29,6 @@ export default {
   },
   labels: {
     startReading: "Start reading",
-    searchTopics: "Search a topic...",
     relatedToYourSearch: "Related to your research",
     singleResult: "%number% result for %query%",
     multipleResults: "%number% results for %query%",
@@ -42,6 +41,12 @@ export default {
     duration: '%duration%min read',
     byAuthor: 'by %author%',
     translatedFromLanguage: 'translated from %language%',
+    nothingBookmarked: "Nothing bookmarked",
+    bookmarked: "Your bookmarks",
+  },
+  placeholders: {
+    search: "Search...",
+    searchTopics: "Search a topic...",
   },
   texts: {
     pickTopics: "Pick topics you want to read about",

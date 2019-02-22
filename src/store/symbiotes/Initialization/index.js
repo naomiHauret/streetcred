@@ -6,15 +6,13 @@ const initialState = {
 }
 
 const symbiotes = {
-  setInternetConnectionStatus: (state, payload) => ({
-    ...state,
-    internetConnection: payload,
-  }),
+  // user has chosen his/her topics of interests
   checkIn: (state) => ({
     ...state,
     userHasCheckedIn: true,
   }),
-  changeConnectionStatus: (state, payload) => ({
+  // set user connection status (connected/disconnected)
+  setInternetConnectionStatus: (state, payload) => ({
     ...state,
     internetConnection: payload,
   }),

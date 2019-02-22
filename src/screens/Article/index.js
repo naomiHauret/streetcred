@@ -7,16 +7,15 @@ const mapStateToProps = (state) => ({
   translation: state.translation,
   theme: state.theme.current,
   articles: state.content.articles,
-  bookmarkedList: state.content.bookmarkedList,
   currentlyReadingList: state.content.currentlyReadingList,
   doneReadingList: state.content.doneReadingList,
-  dailyList: state.content.dailyList,
 })
 
 const mapDispatchToProps = (dispatch, props) => ({
   addToBookmarked: (payload) => dispatch(ContentActions.addToBookmarked(payload)),
   removeFromBookmarked: (payload) => dispatch(ContentActions.removeFromBookmarked(payload)),
   completeArticle: (payload) => dispatch(ContentActions.completeArticle(payload)),
+  setProgression: (payload) => dispatch(ContentActions.setProgression(payload)),
 })
 
 

@@ -8,6 +8,7 @@ const initialState = {
 }
 
 const symbiotes = {
+  // change active tab on bottom bar
   changeTab: (state, payload) => ({
     ...state,
     activeBottomTab: payload,

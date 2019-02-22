@@ -5,6 +5,7 @@ import { BoxShadow } from 'expo-react-native-shadow'
 import { connect } from 'react-redux'
 import { actions as NavigatorActions } from 'store/symbiotes/Navigator'
 import { t } from 'utils/translation'
+import { COLOR_BLUE_2 } from 'utils/designTokens'
 
 const mapStateToProps = (state) => ({
   theme: state.theme.current,
@@ -41,7 +42,7 @@ class TabBarTop extends PureComponent {
     const shadowStyle = {
       width: Dimensions.get('window').width,
       height,
-      color: "#417CB2",
+      color: COLOR_BLUE_2,
       border: 1,
       radius: 0,
       opacity: 0.09,

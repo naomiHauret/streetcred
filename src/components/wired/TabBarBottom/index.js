@@ -6,6 +6,7 @@ import { MaterialCommunityIcons, Octicons } from '@expo/vector-icons'
 import { connect } from 'react-redux'
 import { actions as NavigatorActions } from 'store/symbiotes/Navigator'
 import { Transition } from 'react-navigation-fluid-transitions'
+import { COLOR_BLUE_2 } from 'utils/designTokens'
 
 const mapStateToProps = (state) => ({
   activeBottomTab: state.navigator.activeBottomTab,
@@ -34,7 +35,7 @@ const TabBarBottom = props => {
     <BoxShadow setting={{
       width: Dimensions.get('window').width,
       height,
-      color: "#417CB2",
+      color: COLOR_BLUE_2,
       border: 2,
       radius: 0,
       opacity: 0.09,

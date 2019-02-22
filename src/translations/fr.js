@@ -1,5 +1,4 @@
 export default {
-  test: '%super% en français',
   languages: {
     en: "Anglais",
     fr: "Français",
@@ -30,7 +29,6 @@ export default {
   },
   labels: {
     startReading: "Commencer à lire",
-    searchTopics: "Chercher un sujet...",
     following: "Suivi",
     follow: "Suivre",
     singleFollow: "%number% abonnement",
@@ -46,6 +44,12 @@ export default {
     duration: '%duration%min de lecture',
     byAuthor: 'par %author%',
     translatedFromLanguage: 'langue originale: %language%',
+    nothingBookmarked: "Aucun contenu dans votre liste de lecture",
+    bookmarked: "Votre liste de lecture",
+  },
+  placeholders: {
+    search: "Rechercher...",
+    searchTopics: "Chercher un sujet...",
   },
   texts: {
     pickTopics: "Choisissez les sujets qui vous intéressent",

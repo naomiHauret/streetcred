@@ -5,6 +5,7 @@ import { wrap, styles as s } from 'react-native-style-tachyons'
 import { Transition } from 'react-navigation-fluid-transitions'
 import Carousel from 'react-native-snap-carousel'
 import Body from 'components/presentationals/Body'
+import Title from 'components/presentationals/Title'
 import CardArticle from 'components/presentationals/CardArticle'
 import { t } from 'utils/translation'
 import { DAILY_ARTICLES_NUMBER } from 'utils/const'
@@ -16,11 +17,14 @@ export default wrap(
 
       return (
         <Body>
-          {currentlyReadingList.length > 0 && <Fragment>
-            <Text>{t('labels.currentRead', translation)}</Text>
+          {Object.keys(currentlyReadingList).length > 0 && <Fragment>
+            <View cls="flxdr jcsb aifs">
+              <Title theme={theme} align="left" margin="mb3">{t('labels.currentRead', translation)}</Title>
+              <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{Object.keys(currentlyReadingList).length}</Text>
+            </View>
             <Carousel
               layout={'default'} ref={(c) => { this._carousel = c }}
-              data={currentlyReadingList}
+              data={Object.keys(currentlyReadingList)}
               renderItem={({ item, index }) => {
                 return <View>
                   <Text>{fullList[`${item}`].title}</Text>
@@ -31,7 +35,7 @@ export default wrap(
 
             </Fragment>
           }
-          <Text cls="fs-xl b black-1 mb3">{t('labels.yourDaily', translation, {number: DAILY_ARTICLES_NUMBER })}</Text>
+          <Title theme={theme} align="left" margin="mb3">{t('labels.yourDaily', translation, {number: DAILY_ARTICLES_NUMBER })}</Title>
           <Text cls="gray-2">{t('texts.dailyDescription', translation)}</Text>
           <Text cls="b mb4 gray-2">{t('texts.freemiumRestriction', translation, { number: DAILY_ARTICLES_NUMBER })}</Text>
           <ScrollView>
@@ -70,6 +74,7 @@ export default wrap(
                       icon={ isBookmarked ? "bookmark" : "bookmark-border"}
                       key={articleIndex}
                       toggleBookmarked={toggleBookmarked}
+                      theme={theme}
                     />
                   })
                   }

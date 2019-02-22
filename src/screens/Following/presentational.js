@@ -32,9 +32,7 @@ export default wrap(
         <Fragment>
           <View style={{height: 45 }} cls='mt3 ph2'>
             <SearchBar
-              block={false}
-              size="regular"
-              placeholder={t('labels.searchTopics', translation)}
+              placeholder={t('placeholders.searchTopics', translation)}
               value={searchQuery}
               onInput={this.handleSearch}
               theme={theme}

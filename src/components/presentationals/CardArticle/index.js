@@ -9,6 +9,14 @@ const themeSystem = {
     light: 'black-3',
     dark: 'white-0',
   },
+  publication: {
+    light: 'gray-2 ',
+    dark: 'gray-5',
+  },
+  host: {
+    light: 'gray-5',
+    dark: 'gray-2 ',
+  }
 }
   class CardArticle extends PureComponent {
     render() {
@@ -18,9 +26,9 @@ const themeSystem = {
 
         <View cls="pr3 flxs1">
           <Text cls='blue-0 fs-4xs mb1'>{category.toUpperCase()}</Text>
-          <Text cls='gray-5 fs-3xs mt1'>{host.toUpperCase()}</Text>
-          <Text cls={`${themeSystem.title[theme]} b fs-r`}>{title}</Text>
-          <Text cls="gray-2 fs-4xs mt2"><Text>{publication}</Text> ● <Text>{duration}</Text></Text>
+          <Text cls={`${themeSystem.host[theme]} fs-3xs mt1`}>{host.toUpperCase()}</Text>
+          <Text cls={`${themeSystem.title[theme]} b fs-r mt1`}>{title}</Text>
+          <Text cls={`${themeSystem.publication[theme]} fs-4xs mt2`}><Text>{publication}</Text> ● <Text>{duration}</Text></Text>
         </View>
         <View>
         <TouchableOpacity onPress={toggleBookmarked} cls="aife">

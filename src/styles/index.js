@@ -20,10 +20,10 @@ const radius = {
 }
 
 const letterSpacings = {
-  'lt0': TOKENS.LETTER_SPACING_0,
-  'lt-xs': TOKENS.LETTER_SPACING_XS,
-  'lt-sm': TOKENS.LETTER_SPACING_SM,
-  'lt-lg': TOKENS.LETTER_SPACING_LG,
+  lt0: TOKENS.LETTER_SPACING_0,
+  "lt-xs": TOKENS.LETTER_SPACING_XS,
+  "lt-sm": TOKENS.LETTER_SPACING_SM,
+  "lt-lg": TOKENS.LETTER_SPACING_LG,
 }
 
 const customFontSizes = {}
@@ -51,7 +51,6 @@ Object.keys(letterSpacings).map(
     }),
 )
 
-
 export const colors = {
   "white-0": TOKENS.COLOR_WHITE_0,
   "white-1": TOKENS.COLOR_WHITE_1,
@@ -68,42 +67,44 @@ export const colors = {
   "black-1": TOKENS.COLOR_BLACK_1,
   "black-2": TOKENS.COLOR_BLACK_2,
   "black-3": TOKENS.COLOR_BLACK_3,
-  "red": TOKENS.COLOR_RED,
-  "transparent": "transparent",
+  "black-4": TOKENS.COLOR_BLACK_4,
+  "black-5": TOKENS.COLOR_BLACK_5,
+  red: TOKENS.COLOR_RED,
+  transparent: "transparent",
 }
 
 export const customStyles = {
   ...customFontSizes,
   ...customRadius,
   ...customLetterSpacings,
-  'nml2': {
+  nml2: {
     marginLeft: -9,
   },
-  'flxdr': {
-    flexDirection: 'row',
+  flxdr: {
+    flexDirection: "row",
   },
-  'flxdc': {
-    flexDirection: 'column',
+  flxdc: {
+    flexDirection: "column",
   },
-  'tac': {
-    textAlign: 'center',
+  tac: {
+    textAlign: "center",
   },
-  'tal': {
-    textAlign: 'left',
+  tal: {
+    textAlign: "left",
   },
-  'flxw': {
-    flexWrap: 'wrap',
+  flxw: {
+    flexWrap: "wrap",
   },
-  'w100vw': {
-    width: '100%',
+  w100vw: {
+    width: "100%",
   },
-  'h100vh': {
-    height: '100%',
+  h100vh: {
+    height: "100%",
   },
-  'flxs1': {
+  flxs1: {
     flexShrink: 1,
   },
-  'flxg0': {
+  flxg0: {
     flexGrow: 0,
   },
 }

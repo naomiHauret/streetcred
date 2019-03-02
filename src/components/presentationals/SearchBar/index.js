@@ -17,16 +17,16 @@ const themeSystem = {
   },
   borders: {
     rounded: {
-      dark: 'ba b--black-3',
+      dark: 'ba b--black-2',
       light: 'ba b--gray-0',
     },
     block: {
       dark: 'bb b--black-3',
-      light: 'ba b--black-3',
+      light: '',
     },
   },
   backgrounds: {
-    dark: 'bg-black-5',
+    dark: 'bg-black-4',
     light: 'bg-white-0',
   },
   colors: {
@@ -53,7 +53,7 @@ export default wrap(
       const { placeholder, onInput, value, theme, type } = this.props
 
       return (
-        <View cls={`flxdr flx-i jcsb aic ${themeSystem.borders[type][theme]} ${themeSystem.colors[theme]} ${themeSystem.backgrounds[theme]} ${themeSystem.paddings[type]} ${themeSystem.radius[type]}`}>
+        <View style={{elevation: type === 'block' ? 6 : 0}} cls={`flxdr flx-i jcsb aic ${themeSystem.borders[type][theme]} ${themeSystem.backgrounds[theme]} ${themeSystem.paddings[type]} ${themeSystem.radius[type]}`}>
           <NativeTextInput
             onChangeText={(text) => {
               this.handleChange(text)
@@ -65,7 +65,7 @@ export default wrap(
             spellCheck={false}
             autoCorrect={false}
             autoCapitalize={'none'}
-            cls={`flx-i`}
+            cls={`flx-i  ${themeSystem.colors[theme]} `}
             placeholderTextColor={`${themeSystem.placeholders[theme]}`}
           />
           <View style={{ width: 50 }} cls='aife pv2 pr2'>

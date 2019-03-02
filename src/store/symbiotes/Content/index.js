@@ -60,6 +60,16 @@ const symbiotes = {
       }).map(filtered => filtered.id)
       dailyList = dailyList.length > DAILY_ARTICLES_NUMBER ? dailyList.slice(0, DAILY_ARTICLES_NUMBER - 1) : dailyList
     }
+
+      const searchIndex = Object.values(articles).map(article => ({
+        id: article.id,
+        title: article.title,
+        author: article.author,
+        host: article.host,
+        category: article.category,
+        tags: article.tags,
+      }))
+
       return {
         ...state,
         loading: false,
@@ -73,7 +83,14 @@ const symbiotes = {
         pickedList: [
           ...state.pickedList,
           ...newPickList
-        ]
+        ],
+        exploreSearchIndex: {
+          ...state.exploreSearchIndex,
+          ...searchIndex
+        },
+        renderQueryExplore: [
+          ...Object.keys(articles),
+        ],
    }
   },
 
@@ -108,16 +125,24 @@ const symbiotes = {
   }),
 
   // Add to current read list
-  readArticle: (state, payload) => ({
-    ...state,
-    currentlyReadingList: {
-      ...state.currentlyReadingList,
-      [payload]: {
-        ...state.currentlyReadingList[payload],
-        id: payload,
-      }
-    },
-  }),
+  readArticle: (state, payload) => {
+    const article = {
+      ...state.currentlyReadingList[payload],
+      id: payload,
+    }
+
+    if (!Object.keys(state.currentlyReadingList).includes(payload)) {
+      article.progression = 0
+      article.position = 0
+    }
+    return {
+      ...state,
+      currentlyReadingList: {
+        ...state.currentlyReadingList,
+        [payload]: article,
+      },
+    }
+  },
 
   // Update reading progression of content in percent
   setProgression: (state, payload) => ({
@@ -144,13 +169,18 @@ const symbiotes = {
       payload,
     ]
   }),
-  removeFromReadingList: (state, payload) => ({
-    ...state,
-    currentlyReadingList: {
-      ...state.currentlyReadingList,
-      [payload]: undefined
-    },
-  }),
+  removeFromReadingList: (state, payload) => {
+    const newCurrentlyReadingList = {}
+    Object.keys(state.currentlyReadingList).reduce((object, key) => {
+      if (key !== payload) {
+        newCurrentlyReadingList[key] = state.currentlyReadingList[key]
+      }
+    }, {})
+    return {
+      ...state,
+      currentlyReadingList: newCurrentlyReadingList,
+    }
+  },
   searchBookmarks: (state, payload) => {
     const query = payload.query
     let options = {
@@ -174,6 +204,30 @@ const symbiotes = {
       renderQueryBookmarks: newRenderList,
       queryBookmarkedResultsNumber: searchResult.length,
     }
-  }
+  },
+  searchThroughExplore: (state, payload) => {
+    const query = payload.query
+    let options = {
+      keys: ["title", "author", "host", "category", "tags"],
+      shouldSort: true,
+      threshold: 0.2
+    }
+    let newRenderList
+    const fuse = new Fuse(Object.values(state.exploreSearchIndex), options)
+    const searchResult = fuse.search(query)
+
+    if (searchResult.length <= 0 || query.trim() === '') {
+      newRenderList = Object.keys(state.articles)
+    } else {
+      newRenderList = searchResult.map(result => result.id)
+    }
+
+    return {
+      ...state,
+      queryExplore: payload.query,
+      renderQueryExplore: newRenderList,
+      queryExploreResultsNumber: searchResult.length,
+    }
+  },
 }
 export const { actions, reducer: contentReducer } = createSymbiote(initialState, symbiotes, 'app/content')

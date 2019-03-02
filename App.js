@@ -7,6 +7,7 @@ import { store, persistor }  from 'store'
 import App from 'screens/App'
 import { colors } from 'styles'
 import { customStyles } from 'styles'
+import { purgeStoredState } from 'redux-persist';
 
 // Styles
 NativeTachyons.build({
@@ -22,6 +23,7 @@ NativeTachyons.build({
   }
 }, StyleSheet)
 
+// persistor.purge()
 export default wrappedApp = () => (
   <ReduxProvider store={store}>
     <PersistGate loading={null} persistor={persistor}>

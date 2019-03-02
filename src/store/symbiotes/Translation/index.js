@@ -9,6 +9,7 @@ const fallback= 'en'
 const initialState = {
  locale,
  fallback,
+ available: ['fr', 'en'],
 }
 
 const symbiotes = {

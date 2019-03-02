@@ -3,18 +3,20 @@ import React, { PureComponent, Fragment } from 'react'
 import { Text, ScrollView, View, Image, Dimensions } from 'react-native'
 import { wrap, styles as s } from 'react-native-style-tachyons'
 import { Transition } from 'react-navigation-fluid-transitions'
-import Carousel from 'react-native-snap-carousel'
 import Body from 'components/presentationals/Body'
 import Title from 'components/presentationals/Title'
+import CarouselCurrentRead from 'components/presentationals/CarouselCurrentRead'
 import CardArticle from 'components/presentationals/CardArticle'
-import CardCurrentlyReading from 'components/presentationals/CardCurrentlyReading'
 import { t } from 'utils/translation'
 import { DAILY_ARTICLES_NUMBER } from 'utils/const'
-import { MaterialIcons } from '@expo/vector-icons'
-import { LinearGradient } from 'expo'
+import * as Animatable from 'react-native-animatable'
 
 export default wrap(
   class PickedForMe extends PureComponent {
+    state = {
+      carouselCurrentItem: 0
+    }
+
     isBookmarked = (article) => this.props.bookmarkedList.includes(article) === true
     toggleBookmarked = (article) => {
       const { translation, addToast, removeFromBookmarked, addToBookmarked, fullList } = this.props
@@ -42,50 +44,58 @@ export default wrap(
       return removeFromReadingList(article)
     }
 
+    handleSnapToItem = (index) => {
+      this.setState({
+        carouselCurrentItem: index,
+      })
+    }
+
     render() {
       const { navigation, translation, theme, fullList, dailyList, bookmarkedList, currentlyReadingList, doneReadingList, addToBookmarked, removeFromBookmarked, addToast, readArticle } = this.props
-
+      const currentReadKeys = Object.keys(currentlyReadingList)
       return (
         <Body>
-          {Object.keys(currentlyReadingList).length > 0 && <Fragment>
+          {currentReadKeys.length > 0 && <Fragment>
             <View cls="flxdr jcsb aifs">
               <Title theme={theme} align="left" margin="mb3">{t('labels.currentRead', translation)}</Title>
-              <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{Object.keys(currentlyReadingList).length}</Text>
+              <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{this.state.carouselCurrentItem + 1}/{currentReadKeys.length}</Text>
             </View>
-            {Object.keys(currentlyReadingList).map((item, index) => <CardCurrentlyReading
-              key={index}
-              theme={theme}
+            <CarouselCurrentRead
+              list={currentReadKeys}
+              handleSnapToItem={this.handleSnapToItem}
               translation={translation}
-              category={t(`topics.${fullList[item].category}`, translation)}
-              host={fullList[`${item}`].host}
-              publication={fullList[`${item}`].publicationDate}
-              title={fullList[`${item}`].title}
-              image={fullList[item].cover['2x'].url}
-              percentLeft={Math.ceil(100 - currentlyReadingList[item].progression)}
-              timeLeft={Math.ceil(currentlyReadingList[item].progression / 100 * fullList[`${item}`].durationInMinutes)}
-              bookmarked={this.isBookmarked(item)}
-              content={`${fullList[`${item}`].content.replace(/<[^>]*>/g, "").substr(0, 130)}...`}
-              goToArticle={() => {
-                readArticle(item)
-                return navigation.navigate('Article', { articleId: article })
+              theme={theme}
+              articles={fullList}
+              actions={{
+                goToArticle: (item) => {
+                  readArticle(item)
+                  return navigation.navigate('Article', { articleId: item })
+                },
+                isBookmarked: (item) => this.isBookmarked(item),
+                toggleBookmarked: (item) => this.toggleBookmarked(item),
+                removeFromReadingList: (item) => this.deleteFromReading(item)
               }}
-              toggleBookmarked={() => this.toggleBookmarked(item)}
-              removeFromReadingList={() => this.deleteFromReading(item)}
-            />)}
+            />
 
             </Fragment>
           }
-          <Title theme={theme} align="left" margin="mb3">{t('labels.yourDaily', translation, {number: DAILY_ARTICLES_NUMBER })}</Title>
+          <Animatable.View animation="fadeInUp" delay={150} duration={350} >
+
+          <Title theme={theme} align="left" margin={`mb3 ${currentReadKeys.length > 0 ? "mt4" : "" }`}>{t('labels.yourDaily', translation, {number: DAILY_ARTICLES_NUMBER })}</Title>
           <Text cls="gray-2">{t('texts.dailyDescription', translation)}</Text>
           <Text cls="b mb4 gray-2">{t('texts.freemiumRestriction', translation, { number: DAILY_ARTICLES_NUMBER })}</Text>
+          </Animatable.View>
           <ScrollView>
-            {
+          <Animatable.View animation="fadeInUp" delay={250} duration={450} >
+
+          {
               Object.values(dailyList).slice(0).reverse().map((listIndex, index) => {
                 return <Fragment key={index}>
                   {listIndex.map((article, articleIndex) => {
                     const isItemBookmarked = this.isBookmarked(article)
                     return <CardArticle
-                      category={fullList[`${article}`].category}
+                    key={articleIndex}
+                    category={fullList[`${article}`].category}
                       goToArticle={() => {
                         readArticle(article)
                         return navigation.navigate('Article', { articleId: article })}
@@ -105,7 +115,9 @@ export default wrap(
                   }
                 </Fragment>
               })}
-          </ScrollView>
+          </Animatable.View>
+         </ScrollView>
+
           </Body>
       )
     }

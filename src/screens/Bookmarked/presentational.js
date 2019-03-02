@@ -7,7 +7,7 @@ import SearchBar from 'components/presentationals/SearchBar'
 import CardArticle from 'components/presentationals/CardArticle'
 import { t } from 'utils/translation'
 import Title from 'components/presentationals/Title'
-
+import * as Animatable from 'react-native-animatable'
 
 export default wrap(
   class Bookmarked extends PureComponent {
@@ -23,24 +23,41 @@ export default wrap(
         query: text,
       })
     }
+    isBookmarked = (article) => this.props.bookmarkedList.includes(article) === true
+
+    toggleBookmarked = (article) => {
+      const { translation, fullList, removeFromBookmarked, addToast, addToBookmarked } = this.props
+      if (this.isBookmarked(article) === true) {
+        addToast({
+          id: Date.now(),
+          text: t('messages.removeFromBookmarkedSuccess', translation, { article: fullList[`${article}`].title })
+        })
+        return removeFromBookmarked(article)
+      } else {
+        addToast({
+          id: Date.now(),
+          text: t('messages.addToBookmarkedSuccess', translation, { article: fullList[`${article}`].title })
+        })
+        return addToBookmarked(article)
+      }
+    }
     render() {
-      const { navigation,translation, theme, fullList, bookmarkedList,
-        doneReadingList, addToBookmarked, removeFromBookmarked, addToast,
-        readArticle, search, queryResults, renderList
-      } = this.props
+      const { navigation, translation, theme, fullList, bookmarkedList, doneReadingList, readArticle, search, queryResults, renderList} = this.props
       const { searchQuery } = this.state
       const screenWidth = Dimensions.get('window').width
-
+      const listToRender = searchQuery.trim() === "" ||  queryResults === 0 ? bookmarkedList : renderList
       return (
         <Fragment>
-          <View style={{ height: 45 }}>
+          {bookmarkedList.length > 4 && <View style={{ height: 45 }}>
             <SearchBar
               type='block'
-              placeholder={t('labels.search', translation)}
+              placeholder={t('placeholders.search', translation)}
               onInput={this.handleSearch}
               value={searchQuery} theme={theme}
             />
           </View>
+          }
+
 
           {bookmarkedList.length === 0 ? <Fragment>
             <View cls="flx-i jcc">
@@ -60,25 +77,10 @@ export default wrap(
                   <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{bookmarkedList.length}</Text>
                 </View>
               }
+              <Animatable.View animation="fadeInUp" delay={50} duration={450} >
               {
-                  renderList.slice(0).reverse().map((article, index) => {
-                  const isBookmarked = bookmarkedList.includes(article) === true
-                  const toggleBookmarked = () => {
-                    if (isBookmarked === true) {
-                      addToast({
-                        id: Date.now(),
-                        text: t('messages.removeFromBookmarkedSuccess', translation, { article: fullList[`${article}`].title })
-                      })
-                      return removeFromBookmarked(article)
-                    } else {
-                      addToast({
-                        id: Date.now(),
-                        text: t('messages.addToBookmarkedSuccess', translation, { article: fullList[`${article}`].title })
-                      })
-                      return addToBookmarked(article)
-                    }
-                  }
-                      return <CardArticle
+                  listToRender.slice(0).reverse().map((article, index) => {
+                    return <CardArticle
                         category={fullList[`${article}`].category}
                         goToArticle={() => {
                           readArticle(article)
@@ -90,14 +92,15 @@ export default wrap(
                         image={fullList[`${article}`].cover.mini.url}
                         duration={t('labels.duration', translation, { duration: fullList[`${article}`].durationInMinutes })}
                         publication={fullList[`${article}`].publicationDate}
-                        bookmarked={isBookmarked}
+                        bookmarked={this.isBookmarked(article)}
                         icon={"close"}
                         key={index}
-                        toggleBookmarked={toggleBookmarked}
+                        toggleBookmarked={() => this.toggleBookmarked(article)}
                         theme={theme}
                       />
                     })
               }
+              </Animatable.View>
             </ScrollView>
           </Body> }
 

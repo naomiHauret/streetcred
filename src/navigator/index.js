@@ -6,7 +6,7 @@ import {
   createMaterialTopTabNavigator,
   createAppContainer,
 } from "react-navigation"
-import { FluidNavigator } from 'react-navigation-fluid-transitions'
+import { FluidNavigator } from "react-navigation-fluid-transitions"
 import ArticleScreen from "screens/Article"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
@@ -17,41 +17,45 @@ import FollowingScreen from "screens/Following"
 import TabBarBottom from "components/wired/TabBarBottom"
 import TabBarTop from "components/wired/TabBarTop"
 
-const FeedStack = createMaterialTopTabNavigator({
-  PickedForMe: {
-    screen: PickedForMeScreen,
-    params: {
-      key: "feed",
+const FeedStack = createMaterialTopTabNavigator(
+  {
+    PickedForMe: {
+      screen: PickedForMeScreen,
+      params: {
+        key: "feed",
+      },
+    },
+    Following: {
+      screen: FollowingScreen,
+      params: {
+        key: "feed",
+      },
     },
   },
-  Following: {
-    screen: FollowingScreen,
-    params: {
-      key: "feed",
-    },
-  },
-}, {
-    tabBarComponent: (props) => <TabBarTop {...props} />,
-    swipeEnabled: false,
-  }, )
-
-const MoreStack = createMaterialTopTabNavigator({
-  Parameters: {
-    screen: ParametersScreen,
-    params: {
-      key: "parameters",
-    },
-  },
-  About: {
-    screen: AboutScreen,
-    params: {
-      key: "about",
-    },
-  },
-},
   {
     tabBarComponent: (props) => <TabBarTop {...props} />,
-    swipeEnabled: false
+    swipeEnabled: false,
+  },
+)
+
+const MoreStack = createMaterialTopTabNavigator(
+  {
+    Parameters: {
+      screen: ParametersScreen,
+      params: {
+        key: "parameters",
+      },
+    },
+    About: {
+      screen: AboutScreen,
+      params: {
+        key: "about",
+      },
+    },
+  },
+  {
+    tabBarComponent: (props) => <TabBarTop {...props} />,
+    swipeEnabled: false,
   },
 )
 
@@ -83,19 +87,19 @@ const MainStack = createBottomTabNavigator(
       },
     },
 
+    Article: {
+      screen: ArticleScreen,
+      params: {
+        hidden: true,
+        key: "article",
+      },
+    },
     More: {
       screen: MoreStack,
       params: {
         hidden: false,
         icon: "dots-horizontal",
         key: "more",
-      },
-    },
-    Article: {
-      screen: ArticleScreen,
-      params: {
-        hidden: true,
-        key: "article",
       },
     },
   },

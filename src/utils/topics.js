@@ -67,5 +67,5 @@ export default [
   "miscellaneous",
   "terrorism",
   "scandal",
-  "people"
+  "people",
 ]

@@ -1,21 +1,21 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { connect } from 'react-redux'
+import Screen from './presentational'
+import { actions as ThemeActions } from 'store/symbiotes/Theme'
+import { actions as TranslationActions } from 'store/symbiotes/Translation'
 
-export default class Parameters extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Parameters screen</Text>
-      </View>
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  translation: state.translation,
+  theme: state.theme.current,
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const mapDispatchToProps = (dispatch, props) => ({
+  switchTheme: () => dispatch(ThemeActions.switchTheme()),
+  changeLocale: (payload) => dispatch(TranslationActions.changeLocale(payload))
+})
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Screen)

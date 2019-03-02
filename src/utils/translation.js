@@ -8,14 +8,17 @@ const langs = {
 }
 
 export const t = (id, translation, values) => {
-  let translated = Object.keys(langs).includes(translation.locale) ? langs[translation.locale][id] : langs[translation.fallback][id]
+  let translated = Object.keys(langs).includes(translation.locale)
+    ? langs[translation.locale][id]
+    : langs[translation.fallback][id]
   let translatedWithVariables = translated
 
   if (translated !== undefined && translated !== null) {
-    values !== undefined && Object.keys(values).map((v) => {
-      let pattern = new RegExp(`%${v}%`, "gi") // Regex = %...%
-      translatedWithVariables = translatedWithVariables.replace(pattern, values[v]) // replace everything between the % AND the % symbols
-    })
+    values !== undefined &&
+      Object.keys(values).map((v) => {
+        let pattern = new RegExp(`%${v}%`, "gi") // Regex = %...%
+        translatedWithVariables = translatedWithVariables.replace(pattern, values[v]) // replace everything between the % AND the % symbols
+      })
     return translatedWithVariables
   }
 

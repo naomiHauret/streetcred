@@ -1,11 +1,18 @@
 import React, { PureComponent, Fragment } from 'react'
 import { Text, FlatList, View } from 'react-native'
+import * as Animatable from 'react-native-animatable'
 import { wrap, styles as s } from 'react-native-style-tachyons'
 import Body from 'components/presentationals/Body'
 import SearchBar from 'components/presentationals/SearchBar'
 import Button from 'components/presentationals/Button'
 import { t } from 'utils/translation'
 
+const themeSystem = {
+  topicName: {
+    light: 'black-3',
+    dark: 'white_0',
+  }
+}
 export default wrap(
   class Following extends PureComponent {
     state = {
@@ -47,12 +54,7 @@ export default wrap(
                 t(`labels.${searchResultNumber > 1 ? "multipleResults" : searchResultNumber === 0 ? "noResults" : "singleResult"}`, translation, { number: searchResultNumber, query: searchQuery })
             }
             </Text>
-
-              <FlatList
-                data={renderList}
-                keyExtractor={(item, index) => typeof item === 'object' ? item.id : item}
-                cls='flx-i'
-                renderItem={({item}) => {
+              {renderList.map((item, index) => {
                   let followed
                   let handle
                   let topicName
@@ -79,19 +81,17 @@ export default wrap(
                     }
                   }
                   const buttonLabel = followed ? t('labels.following', translation) : t('labels.follow', translation)
-
                   return (
-                    <View>
+                    <Animatable.View key={index} animation="fadeInUp" duration={350} delay={50 * (index + 1)}>
                       <View style={[s.flxdr, s.jcsb, s.aic, s.mb2, s.mt2]}>
-                        <Text cls='flx-i'>{ topicName }</Text>
+                        <Text cls={`flx-i ${themeSystem.topicName[theme]}`}>{ topicName }</Text>
                         <Button handleOnPress={handle} bold={true} theme="secondary" uppercase={false} inverted={followed} size="sm" radius="lg" >
                           { buttonLabel }
                         </Button>
                       </View>
-                    </View>
+                    </Animatable.View>
                   )
-                }}
-              />
+              } )}
             </Body>
         </Fragment>
       )

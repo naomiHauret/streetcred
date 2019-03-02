@@ -5,27 +5,34 @@ import { MaterialIcons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo'
 import Tag from 'components/presentationals/Tag'
 import Button from 'components/presentationals/Button'
-import { COLOR_BLUE_1, COLOR_GRAY_1 } from 'utils/designTokens'
+import { COLOR_BLUE_1, COLOR_GRAY_1, COLOR_WHITE_0, COLOR_BLACK_3 } from 'utils/designTokens'
 import { t } from 'utils/translation'
+import { BoxShadow } from 'expo-react-native-shadow'
 
 const themeSystem = {
   preview: {
     light: {
       text: 'black-2',
-      bg: 'white-0'
+      bg: 'bg-white-0'
     },
     dark: {
       text: 'white-0',
-      bg: 'black-3'
-    },  },
+      bg: 'bg-black-3'
+    },
+  },
+  shadow: {
+    light: COLOR_WHITE_0,
+    dark: COLOR_BLACK_3,
+  }
 }
+
+const actionButtonSize = 45
 class CardCurrentlyReading extends PureComponent {
   render() {
     const { translation, category, goToArticle, host, title, image, percentLeft, timeLeft, publication, bookmarked, content, toggleBookmarked, theme, removeFromReadingList } = this.props
-
     return <View
+      cls="flx-i"
       style={{
-        width: Dimensions.get('window').width - 35,
         height: Dimensions.get('window').height - 200,
     }}>
       <Image style={{top: 0, left: 0}} source={{ uri: image }} cls="absolute radius-sm w100vw h100vh" />
@@ -35,22 +42,26 @@ class CardCurrentlyReading extends PureComponent {
         <Text cls="fs-r white-0 mt2">{host.toUpperCase()}</Text>
         <Text cls="white-0 mt2">{publication}</Text>
         <Text cls="b fs-lg white-0 mt3">{title}</Text>
-        <View cls={`mt3 ${themeSystem.preview[theme].bg} radius-sm`}>
+        <View cls={`mt3 ${themeSystem.preview[theme].bg} radius-md`} style={{zIndex: 0}}>
           <LinearGradient
-           colors={['#FFFFFF', 'transparent']}
-           style={{ top: 0, left: 0, height: 55 }}
+            colors={[themeSystem.shadow[theme], 'transparent']}
+           style={{ top: 0, left: 0, height: "60%", zIndex: 1 }}
            cls="absolute w100vw radius-sm" />
-          <Text cls={`fs-r ph3 pt2 pb3 ${themeSystem.preview[theme].text}`}>
+          <Text cls={`fs-r ph3 pt2 pb3 ${themeSystem.preview[theme].text}`} style={{ zIndex: 0 }}>
             {content}
           </Text>
-          <View cls="flxdr w100vw absolute" style={{ left: 0, bottom: "-20%",}}>
+          <LinearGradient
+            colors={['transparent', themeSystem.shadow[theme]]}
+            style={{ bottom: 0, left: 0, height: "60%", zIndex: 1 }}
+            cls="absolute w100vw radius-sm" />
+          <View cls="flxdr w100vw absolute aic jcc" style={{ left: 0, bottom: "-17.5%", zIndex: 2}}>
             <View style={{width: "65%"}}>
               <Button
                 theme="primary"
                 size="default"
                 radius="lg"
-                margins="nml2"
                 handleOnPress={goToArticle}
+                style={{ elevation: 15 }}
               >
                 <Text cls="b lt-lg">
                   {t('labels.continue', translation).toUpperCase()}{"\n"}
@@ -60,10 +71,10 @@ class CardCurrentlyReading extends PureComponent {
                 </Text>
               </Button>
               </View>
-              <Button handleOnPress={toggleBookmarked} style={{width: 55, height: 55}} margins="mh1" gradient={true} theme="gradient" radius="lg" align="center">
+            <Button style={{ elevation: 15 }} handleOnPress={toggleBookmarked} margins="mh1" style={{ width: actionButtonSize, height: actionButtonSize}} gradient={true} theme="gradient" radius="lg" align="center">
               <MaterialIcons cls="gray-2" name={bookmarked ? "bookmark" : "bookmark-border" } size={32} />
               </Button>
-            <Button handleOnPress={removeFromReadingList} margins="mr1" style={{ width: 55, height: 55 }} gradient={true} theme="gradient" radius="lg" align="center">
+            <Button style={{ elevation: 15 }} handleOnPress={removeFromReadingList} style={{ width: actionButtonSize, height: actionButtonSize }} gradient={true} theme="gradient" radius="lg" align="center">
               <MaterialIcons cls="gray-2" name="close" size={32} />
             </Button>
           </View>

@@ -13,13 +13,32 @@
       "animals",
       "food",
       "bien-être",
-      "tourism"
+      "tourism",
+      "vacances",
+      "holidays"
     ]
   },
   {
     "id": "videogames",
     "en": "video games",
-    "fr": "jeux vidéos"
+    "fr": "jeux vidéos",
+    "related": [
+      "youth",
+      "jeunesse",
+      "entertainment",
+      "loisir",
+      "anime",
+      "japan",
+      "japon",
+      "nintendo",
+      "konami",
+      "sony",
+      "bethesda softworks",
+      "computer",
+      "tech",
+      "smartphone",
+      "ordinateur"
+    ]
   },
   {
     "id": "food",
@@ -54,7 +73,17 @@
       "tech",
       "tourism",
       "artificial intelligence",
-      "agriculture"
+      "agriculture",
+      "animals",
+      "animal rights",
+      "droits des animaux",
+      "animaux",
+      "green tech",
+      "VOICE",
+      "synthetic meat",
+      "viande synthétique",
+      "chine",
+      "china"
     ]
   },
   {
@@ -70,37 +99,106 @@
     "id": "tech",
     "en": "tech",
     "fr": "tech",
-    "related": []
+    "related": [
+      "video games",
+      "artificial intelligence",
+      "intelligence artificielle",
+      "computer",
+      "jeux vidéos",
+      "smartphone",
+      "anima",
+      "knightmare",
+      "robotics",
+      "VOICE",
+      "voice",
+      "green tech",
+      "animal rights",
+      "droits des animaux",
+      "technology",
+      "technologie",
+      "robotique"
+    ]
   },
   {
     "id": "ai",
     "en": "artificial intelligence",
     "fr": "intelligence artificielle",
-    "related": []
+    "related": [
+      "anima",
+      "knightmare",
+      "robotics",
+      "tech",
+      "technology",
+      "voice",
+      "VOICE",
+      "droit des animaux",
+      "animal rights",
+      "médor",
+      "robotique"
+    ]
   },
   {
     "id": "robotics",
     "en": "robotics",
     "fr": "robotique",
-    "related": []
+    "related": [
+      "anima",
+      "knightmare",
+      "robotics",
+      "tech",
+      "technology",
+      "voice",
+      "VOICE",
+      "droit des animaux",
+      "animal rights",
+      "médor",
+      "robotique"
+    ]
   },
   {
     "id": "sex",
     "en": "sex",
     "fr": "sexe",
-    "related": []
+    "related": [
+      "love",
+      "amour",
+      "droits des animaux",
+      "animal rights",
+      "psychology",
+      "psychologie",
+      "voice",
+      "tech",
+      "technologie",
+      "technology"
+    ]
   },
   {
     "id": "love",
     "en": "love",
     "fr": "amour",
-    "related": []
+    "related": [
+      "droits des animaux",
+      "animal rights",
+      "psychology",
+      "psychologie",
+      "voice",
+      "family"
+    ]
   },
   {
     "id": "psychology",
     "en": "psychology",
     "fr": "psychologie",
-    "related": []
+    "related": [
+      "droits des animaux",
+      "animal rights",
+      "love",
+      "amour",
+      "sexe",
+      "sex",
+      "voice",
+      "family"
+    ]
   },
   {
     "id": "usa",
@@ -502,13 +600,25 @@
     "id": "music",
     "en": "music",
     "fr": "musique",
-    "related": []
+    "related": [
+      "entertainment",
+      "loisir",
+      "heavy metal",
+      "pop",
+      "synthwave",
+      "animal rights",
+      "droits des animaux",
+      "art",
+      "culture"
+    ]
   },
   {
     "id": "lifestyle",
     "en": "lifestyle",
     "fr": "style de vie",
-    "related": []
+    "related": [
+      "vegan", "veganism", "vegetarian", " vegetarism", "all equals", "all life matters", "travel", "cuisine", "food"
+    ]
   },
   {
     "id": "home",
@@ -520,7 +630,16 @@
     "id": "pet",
     "en": "pet",
     "fr": "animal de compagnie",
-    "related": []
+    "related": [
+      "animal",
+      "nature",
+      "animal rights",
+      "droits des animaux",
+      "médor",
+      "artificial intelligence",
+      "intelligence artificielle",
+      "voice"
+    ]
   },
   {
     "id": "beauty",

@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, props) => ({})
 const themeSystem = {
   backgrounds: {
     light: 'bg-white-0',
-    dark: 'bg-black-2',
+    dark: 'bg-black-4',
   },
   colors: {
     dark: 'white-0',

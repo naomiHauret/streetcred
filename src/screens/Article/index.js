@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Screen from './presentational'
 import { actions as ContentActions } from 'store/symbiotes/Content'
+import { actions as ToastrActions } from 'store/symbiotes/Toastr'
+import { actions as ThemeActions } from 'store/symbiotes/Theme'
 
 const mapStateToProps = (state) => ({
   translation: state.translation,
@@ -9,9 +11,11 @@ const mapStateToProps = (state) => ({
   articles: state.content.articles,
   currentlyReadingList: state.content.currentlyReadingList,
   doneReadingList: state.content.doneReadingList,
-})
+  bookmarkedList: state.content.bookmarkedList,})
 
 const mapDispatchToProps = (dispatch, props) => ({
+  switchTheme: () => dispatch(ThemeActions.switchTheme()),
+  addToast: (payload) => dispatch(ToastrActions.add(payload)),
   addToBookmarked: (payload) => dispatch(ContentActions.addToBookmarked(payload)),
   removeFromBookmarked: (payload) => dispatch(ContentActions.removeFromBookmarked(payload)),
   completeArticle: (payload) => dispatch(ContentActions.completeArticle(payload)),

@@ -1,5 +1,5 @@
-import { createSymbiote } from 'redux-symbiote'
-import { FEED } from 'utils/navigation'
+import { createSymbiote } from "redux-symbiote"
+import { FEED } from "utils/navigation"
 //
 // Handle UI appearance of bottom navbar
 
@@ -14,4 +14,4 @@ const symbiotes = {
     activeBottomTab: payload,
   }),
 }
-export const { actions, reducer: navigatorReducer } = createSymbiote(initialState, symbiotes, 'app/navigator')
+export const { actions, reducer: navigatorReducer } = createSymbiote(initialState, symbiotes, "app/navigator")

@@ -16,7 +16,8 @@ import FollowingScreen from "screens/Following"
 import TabBarBottom from "components/wired/TabBarBottom"
 import TabBarTop from "components/wired/TabBarTop"
 
-const FeedStack = createMaterialTopTabNavigator({
+const FeedStack = createMaterialTopTabNavigator(
+  {
     PickedForMe: {
       screen: PickedForMeScreen,
       params: {
@@ -31,24 +32,25 @@ const FeedStack = createMaterialTopTabNavigator({
     },
   },
   {
-      tabBarComponent: (props) => <TabBarTop {...props} />,
+    tabBarComponent: (props) => <TabBarTop {...props} />,
   },
 )
 
-const MoreStack = createMaterialTopTabNavigator({
-  Parameters: {
-    screen: ParametersScreen,
-    params: {
-      key: "parameters",
+const MoreStack = createMaterialTopTabNavigator(
+  {
+    Parameters: {
+      screen: ParametersScreen,
+      params: {
+        key: "parameters",
+      },
+    },
+    About: {
+      screen: AboutScreen,
+      params: {
+        key: "about",
+      },
     },
   },
-  About: {
-    screen: AboutScreen,
-    params: {
-      key: "about",
-    },
-  },
-},
   {
     tabBarComponent: (props) => <TabBarTop {...props} />,
   },

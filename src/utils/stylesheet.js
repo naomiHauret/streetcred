@@ -9,4 +9,8 @@ export const globalThemedStylesheet = {
     light: "bg_white_1",
     dark: "bg_black_3",
   },
+  paragraph: {
+    fontSize: 16,
+    lineHeight: 1.5
+  }
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Screen from './presentational'
-import { actions as ContentActions } from 'store/symbiotes/Content'
-import { actions as ToastrActions } from 'store/symbiotes/Toastr'
+import React from "react"
+import { connect } from "react-redux"
+import Screen from "./presentational"
+import { actions as ContentActions } from "store/symbiotes/Content"
+import { actions as ToastrActions } from "store/symbiotes/Toastr"
 
 const mapStateToProps = (state) => ({
   translation: state.translation,
@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch, props) => ({
   removeFromReadingList: (payload) => dispatch(ContentActions.removeFromReadingList(payload)),
   readArticle: (payload) => dispatch(ContentActions.readArticle(payload)),
 })
-
 
 export default connect(
   mapStateToProps,

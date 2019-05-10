@@ -1,7 +1,7 @@
 // Colors
 // 0 is the lightest hue
 export const COLOR_WHITE_0 = "#ffffff"
-export const COLOR_WHITE_1 = "#fefefe"
+export const COLOR_WHITE_1 = "#f9f9f9"
 export const COLOR_BLUE_0 = "#7fc2ff"
 export const COLOR_BLUE_1 = "#2d29ff"
 export const COLOR_BLUE_2 = "#417CB2"
@@ -22,7 +22,7 @@ export const COLOR_RED = "#ff285e"
 
 // Font sizes
 export const SIZE_4XS = 12
-export const SIZE_3XS = 13.5
+export const SIZE_3XS = 13
 export const SIZE_2XS = 14
 export const SIZE_XS = 15
 export const SIZE_SM = 16

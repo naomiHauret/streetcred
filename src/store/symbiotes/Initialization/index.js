@@ -1,4 +1,4 @@
-import { createSymbiote } from 'redux-symbiote'
+import { createSymbiote } from "redux-symbiote"
 
 const initialState = {
   userHasCheckedIn: false,
@@ -18,4 +18,4 @@ const symbiotes = {
   }),
 }
 
-export const { actions, reducer: initializationReducer } = createSymbiote(initialState, symbiotes, 'app/initialization')
+export const { actions, reducer: initializationReducer } = createSymbiote(initialState, symbiotes, "app/initialization")

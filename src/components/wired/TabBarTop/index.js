@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from "react"
 import { wrap } from "react-native-style-tachyons"
-import { TouchableOpacity, Text, View, Dimensions } from 'react-native'
-import { BoxShadow } from 'expo-react-native-shadow'
-import { connect } from 'react-redux'
-import { actions as NavigatorActions } from 'store/symbiotes/Navigator'
-import { t } from 'utils/translation'
-import { COLOR_BLUE_2 } from 'utils/designTokens'
+import { TouchableOpacity, Text, View, Dimensions } from "react-native"
+import { BoxShadow } from "expo-react-native-shadow"
+import { connect } from "react-redux"
+import { actions as NavigatorActions } from "store/symbiotes/Navigator"
+import { t } from "utils/translation"
+import { COLOR_BLUE_2 } from "utils/designTokens"
 
 const mapStateToProps = (state) => ({
   theme: state.theme.current,
@@ -16,12 +16,12 @@ const mapDispatchToProps = (dispatch, props) => ({})
 
 const themeSystem = {
   backgrounds: {
-    light: 'bg-white-0',
-    dark: 'bg-black-4',
+    light: "bg-white-0",
+    dark: "bg-black-5",
   },
   colors: {
-    dark: 'white-0',
-    light: 'black-1',
+    dark: "white-0",
+    light: "black-1",
   },
 }
 
@@ -40,7 +40,7 @@ class TabBarTop extends PureComponent {
     const { activeTab } = this.state
     const height = 50
     const shadowStyle = {
-      width: Dimensions.get('window').width,
+      width: Dimensions.get("window").width,
       height,
       color: COLOR_BLUE_2,
       border: 1,
@@ -48,28 +48,34 @@ class TabBarTop extends PureComponent {
       opacity: 0.09,
       x: 0,
       y: 1.5,
-      style: { marginBottom: 1 }
+      style: { marginBottom: 1 },
     }
     return (
-    <BoxShadow setting={shadowStyle}>
-      <View style={{ height }} cls={`flxdr  ${themeSystem.backgrounds[theme]}`} >
-        {
-          navigation.state.routes.map(route => {
-              return (route.params && route.params.hidden === true) ? null : <TouchableOpacity cls={`flx-i jcc aic ${activeTab === route.key ? "b--blue-0" : ""}`} style={{ height: '100%', borderBottomWidth: activeTab === route.key ? 4 : 0 }} key={route.key} onPress={() => {
-              this.setActiveTab(route.key)
-              navigation.navigate(route.key)
-            }}>
-              <Text cls={`asc lt-sm tac b ${themeSystem.colors[theme]} ${activeTab === route.key ? "o-100" : "o-30"}`}>
-                {t(`menu.${route.key}`, translation).toUpperCase()}
-              </Text>
-            </TouchableOpacity>
-          }
-          )
-        }
-      </View>
-    </BoxShadow>)
+      <BoxShadow setting={shadowStyle}>
+        <View style={{ height }} cls={`flxdr  ${themeSystem.backgrounds[theme]}`}>
+          {navigation.state.routes.map((route) => {
+            return route.params && route.params.hidden === true ? null : (
+              <TouchableOpacity
+                cls={`flx-i jcc aic ${activeTab === route.key ? "b--blue-0" : ""}`}
+                style={{ height: "100%", borderBottomWidth: activeTab === route.key ? 4 : 0 }}
+                key={route.key}
+                onPress={() => {
+                  this.setActiveTab(route.key)
+                  navigation.navigate(route.key)
+                }}
+              >
+                <Text
+                  cls={`asc lt-sm tac b ${themeSystem.colors[theme]} ${activeTab === route.key ? "o-100" : "o-30"}`}
+                >
+                  {t(`menu.${route.key}`, translation).toUpperCase()}
+                </Text>
+              </TouchableOpacity>
+            )
+          })}
+        </View>
+      </BoxShadow>
+    )
   }
-
 }
 
 export default connect(

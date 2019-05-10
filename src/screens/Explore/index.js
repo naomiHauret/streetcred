@@ -1,8 +1,8 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Screen from './presentational'
-import { actions as ContentActions } from 'store/symbiotes/Content'
-import { actions as ToastrActions } from 'store/symbiotes/Toastr'
+import React from "react"
+import { connect } from "react-redux"
+import Screen from "./presentational"
+import { actions as ContentActions } from "store/symbiotes/Content"
+import { actions as ToastrActions } from "store/symbiotes/Toastr"
 
 const mapStateToProps = (state) => ({
   translation: state.translation,
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   query: state.content.queryExplore,
   queryResults: state.content.queryExploreResultsNumber,
   renderList: state.content.renderQueryExplore,
+  currentlyReadingList: state.content.currentlyReadingList,
 })
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -22,7 +23,6 @@ const mapDispatchToProps = (dispatch, props) => ({
   readArticle: (payload) => dispatch(ContentActions.readArticle(payload)),
   search: (payload) => dispatch(ContentActions.searchThroughExplore(payload)),
 })
-
 
 export default connect(
   mapStateToProps,

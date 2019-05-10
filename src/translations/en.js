@@ -12,29 +12,34 @@ export default {
     Terms: "Terms and conditions",
   },
   labels: {
-    startReading: "Start reading",
+    bookmarked: "Your bookmarks",
+    byAuthor: "by %author%",
+    currentRead: "Current read",
+    continue: "Continue",
+    darkModeOff: "Dark mode: off",
+    darkModeOn: "Dark mode: on",
+    doneReading: "Finished on %date%",
+    duration: "%duration%min read",
+    explore: "Explore",
+    follow: "Follow",
+    following: "Followed",
+    language: "Language : ",
+    lastConsultation: "Last read on %date%",
+    multipleResults: "%number% results for %query%",
+    noLimit: "Don't want to be limited ?",
+    noResults: "No results %query%",
+    nothingBookmarked: "Nothing bookmarked",
+    payPriceStayPremiumForever: "Pay %price%€ , stay premium forever",
+    premiumModeOff: "Premium mode is off",
+    premiumModeOn: "Premium mode is on",
+    readingLeft: "%percent%% left ● ~ %time%min",
     relatedToYourSearch: "Related to your research",
     singleResult: "%number% result for %query%",
-    multipleResults: "%number% results for %query%",
-    noResults: "No results %query%",
-    currentRead: "Current read",
-    yourDaily: "Your daily %number%",
+    startReading: "Start reading",
     tiredOfAds: "Tired of ads ?",
-    upgradeToPremium: "Upgrade to premium",
-    payPriceStayPremiumForever: "Pay %price%€ , stay premium forever",
-    duration: "%duration%min read",
-    byAuthor: "by %author%",
     translatedFromLanguage: "translated from %language%",
-    nothingBookmarked: "Nothing bookmarked",
-    bookmarked: "Your bookmarks",
-    continue: "Continue",
-    readingLeft: "%percent%% left ● ~ %time%min",
-    explore: "Explore",
-    darkModeOn: "Dark mode: on",
-    darkModeOff: "Dark mode: off",
-    language: "Language : ",
-    premiumModeOff: "Premium mode: off",
-    premiumModeOn: "Premium mode: on",
+    upgradeToPremium: "Upgrade to premium",
+    yourDaily: "Your daily %number%",
   },
   placeholders: {
     search: "Search...",
@@ -50,8 +55,8 @@ export default {
   },
   messages: {
     noInternetConnection: "No internet connection detected",
-    followSuccess: "",
-    unfollowSuccess: "You unfollow %topic%",
+    followSuccess: "You now follow %topic%",
+    unfollowSuccess: "You just unfollowed %topic%",
     removeFromBookmarkedSuccess: '"%article%" was removed from your bookmarks',
     addToBookmarkedSuccess: '"%article%" was added to your bookmarks',
     removeFromReadingSuccess: '"%article%" was removed from your reading list',
@@ -127,4 +132,28 @@ export default {
     animalrights: "Animal rights",
     adultentertainment: "Adult entertainment",
   },
+  screens: {
+    about: {
+      aboutStreetCred: {
+        title: "What is StreetCred ?",
+        text: `StreetCred is more than just your average news app.
+          Everyday, we pick, transcribe and translate with care any content from all over the web (news/blog article, podcasts, videos...) that matches with your interests, without censorship.
+        `
+      },
+      premium: {
+        title: "Premium mode",
+        text: `We give you free access to %number% contents per day. In exchange, ads are displayed on our app, and after every read, we ask you to answer a simple one-question  survey related to the content you just read.
+          To enjoy StreetCred without ads, content limitations and surveys, you can subscribe to StreetCred Premium for only %price% euros per month.
+        `
+      },
+      private: {
+        title: "Privay policy",
+        text: `We truly and deeply care about your private life and private data. That's why we don't collect, nor track, nor sell your data. We also don't store any data about you (geolocation and other information available on your phone). Ads and survey on StreetCred can't collect you data either.`
+      },
+      ads: {
+        title: "Ads",
+        text: `Although we care about diversity, respect and that we do our best to not offend or harm our users, we can't control and we are not responsible of the content of the ads that are displayed on StreetCred.`
+      }
+    }
+  }
 }

@@ -35,7 +35,12 @@ export default {
     explore: "Explorer",
     darkModeOn: "Mode sombre: activé",
     darkModeOff: "Mode sombre: désactivé",
+    premiumModeOff: "Le mode premium est désactivé",
+    premiumModeOn: "Le mode premium est activé",
     language: "Langue :",
+    lastConsultation: "Dernière consultation le %date%",
+    doneReading: "Terminé le %date%",
+    noLimit: "Marre des limites ?",
   },
   placeholders: {
     search: "Rechercher...",
@@ -128,4 +133,30 @@ export default {
     animalrights: "Droits des animaux",
     adultentertainment: "Pour adultes",
   },
+  screens: {
+    about: {
+      aboutStreetCred: {
+        title: "StreetCred, c'est quoi ?",
+        text: `StreetCred est bien plus qu'une qu'une simple application d'actualités.
+Chaque jour, nous sélectionnons et traduisons avec soin des contenus de toutes formes (articles de presse, de blog, transcription de vidéo, transcription de podcast...)  qui correspondent à vos centres d'intérêt, sans filtre et sans censure.
+        `
+      },
+      premium: {
+        title: "Mode premium",
+        text: `Chaque jour, nous vous offrons %number% contenus gratuitement. En contrepartie, nous diffusons publicités et vous demandons après la lecture de chaque contenu de répondre à une enquête en rapport avec ce contenu.
+Pour accéder aux contenus de StreetCred sans limities, sans publicités et sans enquêtes, vous pouvez vous abonnez à StreetCred Premium pour seulement %price% euros par mois.
+        `
+      },
+      private: {
+        title: "Vie privée",
+        text: `Nous accordons une grande importance à votre vie privée et à vos données.
+C'est pourquoi nous ne récoltons ni ne traquons vos informations et ne revendons pas non plus les données concernant vos centres d'intérêt.
+Nous ne stockons aucune données vous concernant (géolocalisation et autres informations présentes sur votre téléphone). De même, les publicités et les formulaires présents sur StreetCred ne peuvent extraire vos données personnelles.`
+      },
+      ads: {
+        title: "Publicités",
+        text: `Bien que nous valorisons la diversité, le respect d'autrui et que nous nous efforçons de ne pas offenser les utilisateurs, nous ne contrôlons pas le contenu des publicités présentes sur notre application.`
+      }
+    }
+  }
 }

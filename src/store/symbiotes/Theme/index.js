@@ -1,5 +1,5 @@
-import { createSymbiote } from 'redux-symbiote'
-import * as THEMES from 'utils/theme'
+import { createSymbiote } from "redux-symbiote"
+import * as THEMES from "utils/theme"
 
 //
 // Handle UI appearance
@@ -15,4 +15,4 @@ const symbiotes = {
     current: state.current === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT,
   }),
 }
-export const { actions, reducer: themeReducer } = createSymbiote(initialState, symbiotes, 'app/theme')
+export const { actions, reducer: themeReducer } = createSymbiote(initialState, symbiotes, "app/theme")

@@ -1,21 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react"
+import { connect } from "react-redux"
+import Screen from "./presentational"
 
-export default class About extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>About screen</Text>
-      </View>
-    );
-  }
-}
+const mapStateToProps = (state) => ({
+  translation: state.translation,
+  theme: state.theme.current,
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const mapDispatchToProps = (dispatch, props) => ({})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Screen)

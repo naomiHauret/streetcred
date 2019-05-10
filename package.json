@@ -37,7 +37,7 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
-    "redux-symbiote": "^3.1.0"
+    "redux-symbiote": "3.0.2"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^3.2.0",

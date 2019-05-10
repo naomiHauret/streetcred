@@ -4252,11 +4252,6 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
   integrity sha512-TghvYc72wlMGMVMluVo9WRJc0mB8KxxF/gZ4YYFy7V2ZQX9l7rgbPg7vjS9mt6U5HXODVFVI2bOduCzwOMv/lw==
 
-nanoid@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-2.0.1.tgz#deb55cac196e3f138071911dabbc3726eb048864"
-  integrity sha512-k1u2uemjIGsn25zmujKnotgniC/gxQ9sdegdezeDiKdkDW56THUMqlz3urndKCXJxA6yPzSZbXx/QCMe/pxqsA==
-
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -5197,13 +5192,12 @@ redux-persist@^5.10.0:
   resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-5.10.0.tgz#5d8d802c5571e55924efc1c3a9b23575283be62b"
   integrity sha512-sSJAzNq7zka3qVHKce1hbvqf0Vf5DuTVm7dr4GtsqQVOexnrvbV47RWFiPxQ8fscnyiuWyD2O92DOxPl0tGCRg==
 
-redux-symbiote@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-3.1.0.tgz#21e3528c3b524342b4f42766644b393547aad79b"
-  integrity sha512-16THhoM5bgRW00rwqJt5TgaElaTJcjcIvb+EQ73U2VHSxjUJmLZrUK4cbR2nSr8RtCLErq9e52SOaGcu2itN/w==
+redux-symbiote@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/redux-symbiote/-/redux-symbiote-3.0.2.tgz#937a91e5ba2d40fd8ee5d8ff0f9759c919eb7945"
+  integrity sha512-VXPTmG0CycLWhrxebQ+qCEXKJCa9Sbshx3bi0lkH812OR/CroGESQQS9D5YJ2S8ngcEOp+ylB1S58d2YxrWhhg==
   dependencies:
-    nanoid "^2.0.1"
-    symbiote-symbol "^3.0.0"
+    symbiote-symbol "^1.1.0"
 
 redux@^4.0.1:
   version "4.0.1"
@@ -5804,10 +5798,10 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-symbiote-symbol@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/symbiote-symbol/-/symbiote-symbol-3.0.0.tgz#dcc63ec453581c12cfc0a4043b2307795e5adfad"
-  integrity sha512-kuThtzbNBZPJOd/rg4a0EXtnL4rB6Swxe6cSImMIcRiYG1vZajTeSs2RRdpE6ipyubHzCLgQ8/Un/+A/SKowAA==
+symbiote-symbol@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/symbiote-symbol/-/symbiote-symbol-1.1.0.tgz#fbee987ab91da60c8d9686b3873560099c71e6fc"
+  integrity sha512-2wLZ/0YbC/msmw+R1OITfmXEfxUHPBSsEi/HdaqPyL8JaezKYfU7SixmVgwblEHIbaVehjW+xMoCLuAAjHjRzA==
 
 symbol-observable@^1.2.0:
   version "1.2.0"

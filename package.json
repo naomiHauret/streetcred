@@ -17,12 +17,14 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^9.0.0",
+    "@skele/components": "^1.0.0-alpha.39",
     "dotize": "^0.2.0",
-    "expo": "^32.0.1",
+    "expo": "^32.0.6",
     "expo-react-native-shadow": "^1.0.3",
-    "fuse.js": "^3.3.1",
+    "fuse.js": "^3.4.4",
+    "luxon": "^1.13.2",
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.0.1",
+    "prismic-javascript": "^2.0.3",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-animatable": "^1.3.1",
@@ -35,10 +37,10 @@
     "react-redux": "^6.0.0",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
-    "redux-symbiote": "^3.0.2"
+    "redux-symbiote": "^3.1.0"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^3.1.3",
-    "babel-preset-expo": "^5.0.0"
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-expo": "^5.1.1"
   }
 }

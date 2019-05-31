@@ -134,6 +134,25 @@ export default {
     adultentertainment: "Pour adultes",
   },
   screens: {
+    premium: {
+      title: "Accédez à une meilleure expérience de lecture avec StreetCred Premium",
+      buttonLabel: "S'abonner à StreetCred Premium",
+      advantages: "Vos avantages :",
+      sections: {
+        limits: {
+          title: 'Fin des limites',
+          text: 'Recevez chaque jour autant de contenus que vous le souhaitez'
+        },
+        ads: {
+          title: 'Fin des pubs',
+          text: 'Plus aucune pub ne vient perturber votre séance de lecture'
+        },
+        surveys: {
+          title: 'Fin des enquêtes',
+          text: 'Vous n\'avez plus à répondre aux enquêtes pour poursuivre votre lecture'
+        },
+      },
+    },
     about: {
       aboutStreetCred: {
         title: "StreetCred, c'est quoi ?",

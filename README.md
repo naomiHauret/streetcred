@@ -10,7 +10,7 @@
 StreetCred is more than just your average news app.
 Everyday, we pick, transcribe and translate with care any content from all over the web (news/blog article, podcasts, videos...) that matches with your interests, without censorship.
         `
-### Premium mode 
+### Premium mode
 We give you free access to 3 new contents per day. In exchange, ads are displayed on our app, and after every read, we ask you to answer a simple one-question  survey related to the content you just read.
 To enjoy StreetCred without ads, content limitations and surveys, you can subscribe to StreetCred Premium for only 5 euros per month.
         `
@@ -28,7 +28,22 @@ StreetCred is one of the fiction app I made for my end-year project : a design f
 ### Tech
 
 * React Native + Expo for basically everything
-* Redux + Redux-Symbiote for anything that is logic-related and shared 
+* Redux + Redux-Symbiote for anything that is logic-related and shared
 * NativeTachyons for styling
 * react animatable for animations
 * Undraw + Figma for illustrations
+
+
+## Install & run
+
+### Technical requirements
+
+* `node` version > 11.10.0
+* `npm` version > 5.6
+* Android phone, version > 7
+
+### Install
+In your terminal, run `npm install`.
+Once it's done, type `npm start` in your terminal.
+Grab your phone, flash the QR Code and that's it, Khimera is alive on your phone !
+

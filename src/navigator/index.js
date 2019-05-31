@@ -10,6 +10,7 @@ import { FluidNavigator } from "react-navigation-fluid-transitions"
 import ArticleScreen from "screens/Article"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
+import PremiumScreen from "screens/Premium"
 import AboutScreen from "screens/About"
 import BookmarkedScreen from "screens/Bookmarked"
 import PickedForMeScreen from "screens/PickedForMe"
@@ -92,6 +93,13 @@ const MainStack = createBottomTabNavigator(
       params: {
         hidden: true,
         key: "article",
+      },
+    },
+    Premium: {
+      screen: PremiumScreen,
+      params: {
+        hidden: true,
+        key: "premium",
       },
     },
     More: {

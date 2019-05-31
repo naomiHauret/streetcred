@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react'
-import { Image, Easing, Platform, Dimensions, StyleSheet, View, Animated, BackHandler } from 'react-native'
+import { StatusBar, Image, Easing, Platform, Dimensions, StyleSheet, View, Animated, BackHandler } from 'react-native'
 import { Asset, Font, SplashScreen } from 'expo'
 import { Provider as ReduxProvider } from 'react-redux'
 import NativeTachyons from 'react-native-style-tachyons'
@@ -96,6 +96,7 @@ export default wrap(
             left: 0,
             bottom: 0,
             right: 0,
+            backgroundColor: "white",
             opacity: this.state.splashAnimation.interpolate({
               inputRange: [0, 1],
               outputRange: [1, 0],

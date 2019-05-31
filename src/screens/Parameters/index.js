@@ -7,6 +7,7 @@ import { actions as TranslationActions } from "store/symbiotes/Translation"
 const mapStateToProps = (state) => ({
   translation: state.translation,
   theme: state.theme.current,
+  isPremium: state.premium.isPremium,
 })
 
 const mapDispatchToProps = (dispatch, props) => ({

@@ -44,7 +44,7 @@ export default withNavigationFocus(
                       </Paragraph>
                       {section === "premium" && <Button
                         style={{ elevation: 15 }}
-                        handleOnPress={() => console.log("yaaaay")}
+                        handleOnPress={() => navigation.navigate('Premium')}
                         margins="mb4"
                         gradient={true}
                         theme="gradient"

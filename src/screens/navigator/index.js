@@ -9,6 +9,7 @@ import {
 import ArticleScreen from "screens/Article"
 import ExploreScreen from "screens/Explore"
 import ParametersScreen from "screens/Parameters"
+import PremiumScreen from "screens/Premium"
 import AboutScreen from "screens/About"
 import BookmarkedScreen from "screens/Bookmarked"
 import PickedForMeScreen from "screens/PickedForMe"
@@ -98,6 +99,13 @@ const MainStack = createBottomTabNavigator(
         key: "article",
       },
     },
+    Premium: {
+      screen: PremiumScreen,
+      params: {
+        hidden: true,
+        key: "premium",
+      },
+    },
   },
   {
     tabBarComponent: (props) => <TabBarBottom {...props} />,
@@ -107,6 +115,7 @@ const MainStack = createBottomTabNavigator(
 const ArticleStack = createStackNavigator({
   Bottom: MainStack,
 })
+
 
 const AppNavigator = createSwitchNavigator({
   Main: MainStack,

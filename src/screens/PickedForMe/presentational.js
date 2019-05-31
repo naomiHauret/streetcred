@@ -156,7 +156,7 @@ export default wrap(
                 })}
               <ViewportAwareView onViewportEnter={this.slideIn}>
                 <Animatable.View ref={this.handleDoneReadingViewRef}>
-                    <GoToPremium theme={theme} title={t('labels.noLimit', translation)} translation={translation} />
+                    <GoToPremium navigation={navigation} theme={theme} title={t('labels.noLimit', translation)} translation={translation} />
                 </Animatable.View>
               </ViewportAwareView>
             </Animatable.View>

@@ -24,18 +24,20 @@ export default wrap(
           </Animatable.View>
           {userHasCheckedIn === true ? (
             <Fragment>
-              {toastrs.map((toastr, index) => (
-                <Message
-                  animationEnter="slideInDown"
-                  animationExit="slideOutUp"
-                  key={index}
-                  theme="info"
-                  closable={true}
-                  onClose={() => removeToast(toastr.id)}
-                >
-                  {toastr.text}
-                </Message>
-              ))}
+              <View>
+                {toastrs.map((toastr, index) => (
+                  <Message
+                    animationEnter="slideInDown"
+                    animationExit="slideOutUp"
+                    key={toastr.id}
+                    theme="info"
+                    closable={true}
+                    onClose={() => removeToast(toastr.id)}
+                  >
+                    {toastr.text}
+                  </Message>
+                ))}
+              </View>
               <AppNavigator />
             </Fragment>
           ) : (

@@ -6,6 +6,7 @@ import { themeReducer as theme } from "store/symbiotes/Theme"
 import { topicsReducer as topics } from "store/symbiotes/Topics"
 import { contentReducer as content } from "store/symbiotes/Content"
 import { toastrReducer as toastr } from "store/symbiotes/Toastr"
+import { premiumReducer as premium } from "store/symbiotes/Premium"
 
 export const rootReducer = combineReducers({
   initialization,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   topics,
   content,
   toastr,
+  premium,
 })

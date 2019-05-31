@@ -4,6 +4,7 @@ import Screen from "./presentational"
 import { actions as ContentActions } from "store/symbiotes/Content"
 import { actions as ToastrActions } from "store/symbiotes/Toastr"
 import { actions as ThemeActions } from "store/symbiotes/Theme"
+import { actions as TrackingActions } from "store/symbiotes/Theme"
 
 const mapStateToProps = (state) => ({
   translation: state.translation,

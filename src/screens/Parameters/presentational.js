@@ -20,7 +20,7 @@ const themeSystem = {
 export default wrap(
   class Parameters extends PureComponent {
     render() {
-      const { translation, theme, changeLocale, switchTheme } = this.props
+      const { translation, theme, navigation, changeLocale, switchTheme, isPremium } = this.props
       const translationOptions = {}
       const isThemeDarkActivated = theme === DARK
 
@@ -60,10 +60,10 @@ export default wrap(
               options={Object.values(translationOptions)}
             />
           </View>
-          <TouchableOpacity cls="pt3 flxdr">
+          <TouchableOpacity onPress={() => navigation.navigate('Premium')} cls="pt3 flxdr">
             <MaterialCommunityIcons name="assistant" cls={themeSystem.icon} size={25} />
             <Text cls={`${globalThemedStylesheet.text.color[theme]} ml1`}>
-              {t("labels.premiumModeOff", translation)}
+              {isPremium ? t("labels.premiumModeOn", translation) : t("labels.premiumModeOff", translation)}
             </Text>
           </TouchableOpacity>
         </Body>

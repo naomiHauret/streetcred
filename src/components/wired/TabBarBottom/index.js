@@ -5,7 +5,6 @@ import { BoxShadow } from "expo-react-native-shadow"
 import { MaterialCommunityIcons, Octicons } from "@expo/vector-icons"
 import { connect } from "react-redux"
 import { actions as NavigatorActions } from "store/symbiotes/Navigator"
-import { Transition } from "react-navigation-fluid-transitions"
 import { COLOR_BLUE_2 } from "utils/designTokens"
 
 const mapStateToProps = (state) => ({
@@ -46,7 +45,7 @@ const TabBarBottom = (props) => {
     >
       <View style={{ height }} cls={`flxdr ${themeSystem.backgrounds[theme]}`}>
         {navigation.state.routes.map((route) => {
-          return route.params && route.params.hidden === true ? null : (
+          return route.params.hidden === true ? null : (
             <TouchableOpacity
               style={{ height: "100%" }}
               cls="flx-i jcc aic"
@@ -63,9 +62,7 @@ const TabBarBottom = (props) => {
                 <MaterialCommunityIcons size={24} name={route.params.icon} />
               </Text>
               {activeBottomTab === route.key && (
-                <Transition appear="bottom">
-                  <Octicons cls="blue-0 absolute" style={{ bottom: 1.5 }} name="primitive-dot" size={15} />
-                </Transition>
+                <Octicons cls="blue-0 absolute" style={{ bottom: 1.5 }} name="primitive-dot" size={15} />
               )}
             </TouchableOpacity>
           )

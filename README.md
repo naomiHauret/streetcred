@@ -2,6 +2,13 @@
 <img src="https://i.imgur.com/OP2AKAI.png" />
 </p>
 
+<p align="center">
+<img src="https://i.imgur.com/BQllQ4B.png" />
+</p>
+
+Flash this QR Code with [Expo](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=fr) to install and run this app.
+
+
 # Streetcred
 
 ## About

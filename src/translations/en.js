@@ -2,6 +2,9 @@ export default {
   languages: {
     en: "English",
     fr: "Français",
+    es: "Spanish",
+    de: "German",
+    si: "Slovenian",
   },
   menu: {
     PickedForMe: "Picked for me",
@@ -12,6 +15,9 @@ export default {
     Terms: "Terms and conditions",
   },
   labels: {
+    survey: "Survey",
+    yes: "Yes",
+    no: "No",
     bookmarked: "Your bookmarks",
     byAuthor: "by %author%",
     currentRead: "Current read",
@@ -40,6 +46,7 @@ export default {
     translatedFromLanguage: "translated from %language%",
     upgradeToPremium: "Upgrade to premium",
     yourDaily: "Your daily %number%",
+    bestExperience: "Fancying a better reading experience ?",
   },
   placeholders: {
     search: "Search...",
@@ -54,6 +61,7 @@ export default {
       "To get the best reading experience on StreetCred with unlimited personnalized contents and no ads, please upgrade your plan.",
   },
   messages: {
+    thankYouForTheAnswer: "Thank you for the answer.",
     noInternetConnection: "No internet connection detected",
     followSuccess: "You now follow %topic%",
     unfollowSuccess: "You just unfollowed %topic%",
@@ -138,22 +146,22 @@ export default {
         title: "What is StreetCred ?",
         text: `StreetCred is more than just your average news app.
           Everyday, we pick, transcribe and translate with care any content from all over the web (news/blog article, podcasts, videos...) that matches with your interests, without censorship.
-        `
+        `,
       },
       premium: {
         title: "Premium mode",
         text: `We give you free access to %number% contents per day. In exchange, ads are displayed on our app, and after every read, we ask you to answer a simple one-question  survey related to the content you just read.
           To enjoy StreetCred without ads, content limitations and surveys, you can subscribe to StreetCred Premium for only %price% euros per month.
-        `
+        `,
       },
       private: {
         title: "Privay policy",
-        text: `We truly and deeply care about your private life and private data. That's why we don't collect, nor track, nor sell your data. We also don't store any data about you (geolocation and other information available on your phone). Ads and survey on StreetCred can't collect you data either.`
+        text: `We truly and deeply care about your private life and private data. That's why we don't collect, nor track, nor sell your data. We also don't store any data about you (geolocation and other information available on your phone). Ads and survey on StreetCred can't collect you data either.`,
       },
       ads: {
         title: "Ads",
-        text: `Although we care about diversity, respect and that we do our best to not offend or harm our users, we can't control and we are not responsible of the content of the ads that are displayed on StreetCred.`
-      }
-    }
-  }
+        text: `Although we care about diversity, respect and that we do our best to not offend or harm our users, we can't control and we are not responsible of the content of the ads that are displayed on StreetCred.`,
+      },
+    },
+  },
 }

@@ -71,89 +71,91 @@ export default wrap(
             </View>
           )}
           <Body theme={theme}>
-          {bookmarkedList.length === 0 ? (
-            <Fragment>
-                <View cls="aic jcc mt3 mb4 tac" style={{
-                  maxHeight: Dimensions.get("window").height * 0.4,
-                }} >
-                <Image
+            {bookmarkedList.length === 0 ? (
+              <Fragment>
+                <View
+                  cls="aic jcc mt3 mb4 tac"
+                  style={{
+                    maxHeight: Dimensions.get("window").height * 0.4,
+                  }}
+                >
+                  <Image
                     cls="rm-contain"
                     style={{
                       marginLeft: "auto",
                       marginRight: "auto",
                       width: screenWidth - 20,
-                      maxHeight: Dimensions.get("window").height * 0.4
+                      maxHeight: Dimensions.get("window").height * 0.4,
                     }}
-                  source={require("./../../../assets/images/empty.png")}
-                />
-              </View>
-              <View style={{ height: "35%" }} cls="ph4">
-                <Title theme={theme} align="center" margin="mt3">
-                  {t("labels.nothingBookmarked", translation)}
-                </Title>
-              </View>
-            </Fragment>
-          ) : (
-            <Fragment>
-              {searchQuery.trim() !== "" && (
-                <Text cls={`b fs-4xs gray-2 ${queryResults === 0 ? "mb3" : "mb2"}`}>
-                  {t(
-                    `labels.${
-                      queryResults > 1 ? "multipleResults" : queryResults === 0 ? "noResults" : "singleResult"
-                    }`,
-                    translation,
-                    { number: queryResults, query: searchQuery },
-                  )}
-                </Text>
-              )}
-              <ScrollView>
-                {(searchQuery.trim() === "" || queryResults === 0) && (
-                  <View cls="flxdr jcsb aic">
-                    <Title theme={theme} align="left">
-                      {t("labels.bookmarked", translation)}
-                    </Title>
-                    <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{bookmarkedList.length}</Text>
-                  </View>
+                    source={require("./../../../assets/images/empty.png")}
+                  />
+                </View>
+                <View style={{ height: "35%" }} cls="ph4">
+                  <Title theme={theme} align="center" margin="mt3">
+                    {t("labels.nothingBookmarked", translation)}
+                  </Title>
+                </View>
+              </Fragment>
+            ) : (
+              <Fragment>
+                {searchQuery.trim() !== "" && (
+                  <Text cls={`b fs-4xs gray-2 ${queryResults === 0 ? "mb3" : "mb2"}`}>
+                    {t(
+                      `labels.${
+                        queryResults > 1 ? "multipleResults" : queryResults === 0 ? "noResults" : "singleResult"
+                      }`,
+                      translation,
+                      { number: queryResults, query: searchQuery },
+                    )}
+                  </Text>
                 )}
-                <Animatable.View animation="fadeInUp" delay={50} duration={450}>
-                  {listToRender
-                    .slice(0)
-                    .reverse()
-                    .map((article, index) => {
-                      const isDoneReadingArticle = doneReadingList.includes(article)
+                <ScrollView>
+                  {(searchQuery.trim() === "" || queryResults === 0) && (
+                    <View cls="flxdr jcsb aic">
+                      <Title theme={theme} align="left">
+                        {t("labels.bookmarked", translation)}
+                      </Title>
+                      <Text cls="gray-2 b fs-4xs ph3 pv1 radius-lg bg_blue_2_10">{bookmarkedList.length}</Text>
+                    </View>
+                  )}
+                  <Animatable.View animation="fadeInUp" delay={50} duration={450}>
+                    {listToRender
+                      .slice(0)
+                      .reverse()
+                      .map((article, index) => {
+                        const isDoneReadingArticle = doneReadingList.includes(article)
 
-                      return (
-                        <CardArticle
-                          category={fullList[`${article}`].category}
-                          goToArticle={() => {
-                            readArticle(article)
-                            return navigation.navigate("Article", { articleId: article })
-                          }}
-                          host={fullList[`${article}`].host}
-                          title={fullList[`${article}`].title}
-                          image={fullList[`${article}`].cover.mini.url}
-                          duration={t("labels.duration", translation, {
-                            duration: fullList[`${article}`].durationInMinutes,
-                          })}
-                          publication={fullList[`${article}`].publicationDate}
-                          bookmarked={this.isBookmarked(article)}
-                          icon={"close"}
-                          key={index}
-                          locale={translation.locale}
-                          toggleBookmarked={() => this.toggleBookmarked(article)}
-                          theme={theme}
-                          alreadyRead={isDoneReadingArticle}
-                        />
-
-                      )
-                    })}
-                </Animatable.View>
-              </ScrollView>
-                </Fragment>
+                        return (
+                          <CardArticle
+                            category={fullList[`${article}`].category}
+                            goToArticle={() => {
+                              readArticle(article)
+                              return navigation.navigate("Article", { articleId: article })
+                            }}
+                            host={fullList[`${article}`].host}
+                            title={fullList[`${article}`].title}
+                            image={fullList[`${article}`].cover.mini.url}
+                            duration={t("labels.duration", translation, {
+                              duration: fullList[`${article}`].durationInMinutes,
+                            })}
+                            publication={fullList[`${article}`].publicationDate}
+                            bookmarked={this.isBookmarked(article)}
+                            icon={"close"}
+                            key={index}
+                            locale={translation.locale}
+                            toggleBookmarked={() => this.toggleBookmarked(article)}
+                            theme={theme}
+                            alreadyRead={isDoneReadingArticle}
+                          />
+                        )
+                      })}
+                  </Animatable.View>
+                </ScrollView>
+              </Fragment>
             )}
-            </Body>
-            </Fragment>
-          )
-        }
-      },
-    )
+          </Body>
+        </Fragment>
+      )
+    }
+  },
+)

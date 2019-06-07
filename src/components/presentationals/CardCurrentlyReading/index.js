@@ -8,7 +8,7 @@ import Button from "components/presentationals/Button"
 import { COLOR_BLUE_1, COLOR_GRAY_1, COLOR_WHITE_0, COLOR_BLACK_3 } from "utils/designTokens"
 import { t } from "utils/translation"
 import { BoxShadow } from "expo-react-native-shadow"
-import SerifText from 'components/presentationals/SerifText'
+import SerifText from "components/presentationals/SerifText"
 
 const themeSystem = {
   preview: {
@@ -70,7 +70,11 @@ class CardCurrentlyReading extends PureComponent {
               style={{ top: 0, left: 0, height: "60%", zIndex: 1 }}
               cls="absolute w100vw radius-sm"
             />
-            <SerifText type="serif" additionalStyles={`ph3 pt2 pb3 fs-sm ${themeSystem.preview[theme].text}`} style={{ zIndex: 0 }}>
+            <SerifText
+              type="serif"
+              additionalStyles={`ph3 pt2 pb3 fs-sm ${themeSystem.preview[theme].text}`}
+              style={{ zIndex: 0 }}
+            >
               {content}
             </SerifText>
             <LinearGradient

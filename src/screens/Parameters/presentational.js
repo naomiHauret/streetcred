@@ -60,7 +60,7 @@ export default wrap(
               options={Object.values(translationOptions)}
             />
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate('Premium')} cls="pt3 flxdr">
+          <TouchableOpacity onPress={() => navigation.navigate("Premium")} cls="pt3 flxdr">
             <MaterialCommunityIcons name="assistant" cls={themeSystem.icon} size={25} />
             <Text cls={`${globalThemedStylesheet.text.color[theme]} ml1`}>
               {isPremium ? t("labels.premiumModeOn", translation) : t("labels.premiumModeOff", translation)}

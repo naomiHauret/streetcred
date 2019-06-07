@@ -17,6 +17,7 @@ export const fetch = (load, onSuccess, onFail, topics) => {
           newArticle.title = result.data.title
           newArticle.author = result.data.author
           newArticle.cover = result.data.cover
+          newArticle.relatedFormUID = result.data.relatedFormUID
           newArticle.host = result.data.host
           newArticle.originalLanguage = result.data.original_language
           newArticle.publicationDate = result.data.publication_date

@@ -4,6 +4,6 @@ const initialState = {
   isPremium: false, // sorry guys
 }
 
-const symbiotes = { }
+const symbiotes = {}
 
 export const { actions, reducer: premiumReducer } = createSymbiote(initialState, symbiotes, "app/premium")

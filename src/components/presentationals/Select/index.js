@@ -14,18 +14,18 @@ class Select extends PureComponent {
     return this.props.handleChange(itemValue)
   }
   render() {
-    const { options, theme, label, withIcon, iconName, iconColor } = this.props
+    const { options, theme, label, withIcon, iconName, iconColor, minimal } = this.props
     const { value } = this.state
 
     return (
       <View cls="flxdr aic">
         <View cls="flxdr aic">
           {withIcon === true && <MaterialCommunityIcons cls={`${iconColor} mr1`} name={iconName} size={20} />}
-          <Text cls={`${globalThemedStylesheet.text.color[theme]} aic`}>{label}</Text>
+          {!minimal && <Text cls={`${globalThemedStylesheet.text.color[theme]} aic`}>{label}</Text>}
         </View>
         <Picker
           cls={`ml1 ${globalThemedStylesheet.text.color[theme]} flx-i`}
-          style={{ backgroundColor: "transparent" }}
+          style={{ backgroundColor: "transparent", opacity: minimal ? 0 : 1 }}
           selectedValue={value}
           onValueChange={(itemValue, itemIndex) => this.changeValue(itemValue, itemIndex)}
         >
@@ -37,6 +37,10 @@ class Select extends PureComponent {
       </View>
     )
   }
+}
+
+Select.defaultProps = {
+  minimal: false,
 }
 
 export default wrap(Select)

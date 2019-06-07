@@ -113,54 +113,58 @@ export default wrap(
             </Paragraph>
           </Animatable.View>
           <Viewport.Tracker>
+            <ScrollView>
+              <Animatable.View animation="fadeInUp" delay={250} duration={450}>
+                {Object.values(dailyList)
+                  .slice(0)
+                  .reverse()
+                  .map((listIndex, index) => {
+                    return (
+                      <Fragment key={index}>
+                        {listIndex.map((article, articleIndex) => {
+                          const isItemBookmarked = this.isBookmarked(article)
+                          const isDoneReadingArticle = doneReadingList.includes(article)
 
-          <ScrollView>
-            <Animatable.View animation="fadeInUp" delay={250} duration={450}>
-              {Object.values(dailyList)
-                .slice(0)
-                .reverse()
-                .map((listIndex, index) => {
-                  return (
-                    <Fragment key={index}>
-                      {listIndex.map((article, articleIndex) => {
-                        const isItemBookmarked = this.isBookmarked(article)
-                        const isDoneReadingArticle = doneReadingList.includes(article)
-
-                        return (
-                          <CardArticle
-                            key={articleIndex}
-                            category={fullList[`${article}`].category}
-                            goToArticle={() => {
-                              readArticle(article)
-                              return navigation.navigate("Article", { articleId: article })
-                            }}
-                            locale={translation.locale}
-                            host={fullList[`${article}`].host}
-                            title={fullList[`${article}`].title}
-                            image={fullList[`${article}`].cover.mini.url}
-                            duration={t("labels.duration", translation, {
-                              duration: fullList[`${article}`].durationInMinutes,
-                            })}
-                            publication={fullList[`${article}`].publicationDate}
-                            bookmarked={isItemBookmarked}
-                            icon={isItemBookmarked ? "bookmark" : "bookmark-border"}
-                            key={articleIndex}
-                            alreadyRead={isDoneReadingArticle}
-                            toggleBookmarked={() => this.toggleBookmarked(article)}
-                            theme={theme}
-                          />
-                        )
-                      })}
-                    </Fragment>
-                  )
-                })}
-              <ViewportAwareView onViewportEnter={this.slideIn}>
-                <Animatable.View ref={this.handleDoneReadingViewRef}>
-                    <GoToPremium navigation={navigation} theme={theme} title={t('labels.noLimit', translation)} translation={translation} />
-                </Animatable.View>
-              </ViewportAwareView>
-            </Animatable.View>
-          </ScrollView>
+                          return (
+                            <CardArticle
+                              key={articleIndex}
+                              category={fullList[`${article}`].category}
+                              goToArticle={() => {
+                                readArticle(article)
+                                return navigation.navigate("Article", { articleId: article })
+                              }}
+                              locale={translation.locale}
+                              host={fullList[`${article}`].host}
+                              title={fullList[`${article}`].title}
+                              image={fullList[`${article}`].cover.mini.url}
+                              duration={t("labels.duration", translation, {
+                                duration: fullList[`${article}`].durationInMinutes,
+                              })}
+                              publication={fullList[`${article}`].publicationDate}
+                              bookmarked={isItemBookmarked}
+                              icon={isItemBookmarked ? "bookmark" : "bookmark-border"}
+                              key={articleIndex}
+                              alreadyRead={isDoneReadingArticle}
+                              toggleBookmarked={() => this.toggleBookmarked(article)}
+                              theme={theme}
+                            />
+                          )
+                        })}
+                      </Fragment>
+                    )
+                  })}
+                <ViewportAwareView onViewportEnter={this.slideIn}>
+                  <Animatable.View ref={this.handleDoneReadingViewRef}>
+                    <GoToPremium
+                      navigation={navigation}
+                      theme={theme}
+                      title={t("labels.noLimit", translation)}
+                      translation={translation}
+                    />
+                  </Animatable.View>
+                </ViewportAwareView>
+              </Animatable.View>
+            </ScrollView>
           </Viewport.Tracker>
         </Body>
       )

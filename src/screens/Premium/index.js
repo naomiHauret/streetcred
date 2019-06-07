@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
   theme: state.theme.current,
 })
 
-const mapDispatchToProps = (dispatch, props) => ({ })
+const mapDispatchToProps = (dispatch, props) => ({})
 
 export default connect(
   mapStateToProps,

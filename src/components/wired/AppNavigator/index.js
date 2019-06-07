@@ -2,8 +2,10 @@ import React, { PureComponent } from "react"
 import Navigator from "navigator"
 import { connect } from "react-redux"
 import { actions as ContentActions } from "store/symbiotes/Content"
+import { actions as QuestionsActions } from "store/symbiotes/Questions"
 import { store } from "store"
-import { fetch } from "store/services/content"
+import { fetch as fetchContent } from "store/services/content"
+import { getQuestions } from "store/services/questions"
 
 const mapStateToProps = (state) => ({
   topics: Object.values(state.topics.list)
@@ -13,16 +15,28 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    load: () => dispatch(ContentActions.load()),
-    errorOnLoad: () => dispatch(ContentActions.errorOnLoad()),
+    loadContent: () => dispatch(ContentActions.load()),
+    errorOnLoadContent: () => dispatch(ContentActions.errorOnLoad()),
     setArticles: (payload) => dispatch(ContentActions.setArticles(payload)),
+    loadQuestions: () => dispatch(QuestionsActions.load()),
+    errorOnLoadQuestions: () => dispatch(QuestionsActions.errorOnLoad()),
+    setQuestions: (payload) => dispatch(QuestionsActions.setQuestions(payload)),
   }
 }
 
 class AppNavigator extends PureComponent {
   componentDidMount() {
-    const { load, setArticles, errorOnLoad, topics } = this.props
-    fetch(load, setArticles, errorOnLoad, topics)
+    const {
+      loadContent,
+      setArticles,
+      errorOnLoadContent,
+      topics,
+      loadQuestions,
+      errorOnLoadQuestions,
+      setQuestions,
+    } = this.props
+    fetchContent(loadContent, setArticles, errorOnLoadContent, topics)
+    getQuestions(loadQuestions, setQuestions, errorOnLoadQuestions)
   }
 
   render() {

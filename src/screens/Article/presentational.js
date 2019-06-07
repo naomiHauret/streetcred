@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from "react"
-import { Text, ScrollView, View, Dimensions, Image, TouchableOpacity } from "react-native"
+import { Text, ScrollView, View, Dimensions, Image, TouchableOpacity, Alert } from "react-native"
 import { wrap, styles as s } from "react-native-style-tachyons"
 import { Transition } from "react-navigation-fluid-transitions"
 import { NavigationEvents } from "react-navigation"
@@ -95,6 +95,10 @@ export default wrap(
         preferredFontSize,
         increaseFontSize,
         decreaseFontSize,
+        questions,
+        answerToQuestion,
+        answers,
+        addToast,
       } = this.props
       const articleId = navigation.getParam("articleId", "NO-ID")
       const screenWidth = Dimensions.get("window").width
@@ -108,7 +112,7 @@ export default wrap(
           ? "100%"
           : "0%"
       const bookmarked = this.isBookmarked(articleId)
-
+      const formUID = articles[`${articleId}`].relatedFormUID
       return (
         <Fragment>
           <View>
@@ -135,7 +139,7 @@ export default wrap(
                   <MaterialIcons name="arrow-back" cls={`${themeSystem.topbar.backIcon[theme]}`} size={30} />
                 </TouchableOpacity>
                 <Text cls={`${themeSystem.topbar.text[theme]} asc b fs-2xs flx-i tac`}>
-                  {articles[`${articleId}`].title}
+                  {articles[`${articleId}`].title.substring(0, 25)}...
                 </Text>
                 <View cls="flxdr aic">
                   <TouchableOpacity cls="mr2" onPress={() => switchTheme()}>
@@ -231,28 +235,6 @@ export default wrap(
               </View>
               <Body theme={theme}>
                 <View style={{ top: this.state.offsetY }}>
-                  <Animatable.View
-                    duration={550}
-                    delay={150}
-                    animation={
-                      currentlyReadingList[articleId] !== undefined && currentlyReadingList[articleId].progression < 23
-                        ? "fadeInDown"
-                        : "fadeOutUp"
-                    }
-                    style={{ elevation: 2, position: "absolute", top: 15, right: 5 }}
-                  >
-                    <Button
-                      style={{ elevation: 15 }}
-                      handleOnPress={() => this.toggleBookmarked(articleId)}
-                      style={{ width: actionButtonSize, height: actionButtonSize }}
-                      gradient={true}
-                      theme="gradient"
-                      radius="lg"
-                      align="center"
-                    >
-                      <MaterialIcons cls="gray-2" name={bookmarked ? "bookmark" : "bookmark-border"} size={32} />
-                    </Button>
-                  </Animatable.View>
                   <View style={{ borderRadius: RADIUS_MD, padding: 0, overflow: "hidden" }}>
                     <Animatable.View
                       duration={450}
@@ -312,10 +294,69 @@ export default wrap(
                       </Animatable.View>
                     </Animatable.View>
                   </View>
+                  <Animatable.View
+                    duration={550}
+                    delay={150}
+                    animation={
+                      currentlyReadingList[articleId] !== undefined && currentlyReadingList[articleId].progression < 23
+                        ? "fadeInDown"
+                        : "fadeOutUp"
+                    }
+                    style={{ elevation: 2, position: "absolute", top: 15, right: 5 }}
+                  >
+                    <Button
+                      style={{ elevation: 15 }}
+                      handleOnPress={() => this.toggleBookmarked(articleId)}
+                      style={{ width: actionButtonSize, height: actionButtonSize }}
+                      gradient={true}
+                      theme="gradient"
+                      radius="lg"
+                      align="center"
+                    >
+                      <MaterialIcons cls="gray-2" name={bookmarked ? "bookmark" : "bookmark-border"} size={32} />
+                    </Button>
+                  </Animatable.View>
                 </View>
-                <AwareView onViewportEnter={() => console.log("Entered!")}>
-                  <Text>Hemlo</Text>
-                </AwareView>
+                <AwareView
+                  onViewportEnter={() =>
+                    !answers.includes(formUID) ? (
+                      Alert.alert(
+                        t("labels.survey", translation),
+                        questions[formUID][translation.locale],
+                        [
+                          {
+                            text: t("labels.yes", translation),
+                            onPress: () => {
+                              answerToQuestion({ uid: formUID, answer: true })
+                              addToast({
+                                id: Date.now(),
+                                text: t("messages.thankYouForTheAnswer", translation),
+                              })
+                            },
+                          },
+                          {
+                            text: t("labels.no", translation),
+                            onPress: () => {
+                              answerToQuestion({ uid: formUID, answer: false })
+                              addToast({
+                                id: Date.now(),
+                                text: t("messages.thankYouForTheAnswer", translation),
+                              })
+                            },
+                          },
+                        ],
+                        { cancelable: false },
+                      )
+                    ) : (
+                      <GoToPremium
+                        navigation={navigation}
+                        theme={theme}
+                        title={t("labels.bestExperience", translation)}
+                        translation={translation}
+                      />
+                    )
+                  }
+                ></AwareView>
               </Body>
             </ScrollView>
           </Viewport.Tracker>

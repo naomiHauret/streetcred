@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
   return {
     translation: state.translation,
     topics: state.topics.list,
-    theme: state.theme,
+    theme: state.theme.current,
   }
 }
 

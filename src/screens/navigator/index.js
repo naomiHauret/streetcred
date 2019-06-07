@@ -116,9 +116,8 @@ const ArticleStack = createStackNavigator({
   Bottom: MainStack,
 })
 
-
 const AppNavigator = createSwitchNavigator({
   Main: MainStack,
 })
 
-export default (Navigator = createAppContainer(AppNavigator))
+export default Navigator = createAppContainer(AppNavigator)

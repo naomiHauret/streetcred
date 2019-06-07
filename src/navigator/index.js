@@ -128,4 +128,4 @@ const App = FluidNavigator({
   App: AppNavigator,
 })
 
-export default (Navigator = createAppContainer(App))
+export default Navigator = createAppContainer(App)

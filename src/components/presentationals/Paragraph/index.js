@@ -8,13 +8,16 @@ export default wrap(
       const { additionalStyles, children } = this.props
 
       return (
-        <Text cls={additionalStyles} style={{
-          fontSize: 14,
-          lineHeight: 20
-        }}>
+        <Text
+          cls={additionalStyles}
+          style={{
+            fontSize: 14,
+            lineHeight: 20,
+          }}
+        >
           {children}
         </Text>
       )
     }
-  }
+  },
 )

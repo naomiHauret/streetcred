@@ -107,17 +107,16 @@ export const customStyles = {
   flxg0: {
     flexGrow: 0,
   },
-  'ff-serifBoldItalic': {
-    fontFamily: 'serifBoldItalic',
+  "ff-serifBoldItalic": {
+    fontFamily: "serifBoldItalic",
   },
-  'ff-serifBold': {
-    fontFamily: 'serifBold',
+  "ff-serifBold": {
+    fontFamily: "serifBold",
   },
-  'ff-serifItalic': {
-    fontFamily: 'serifItalic',
-
+  "ff-serifItalic": {
+    fontFamily: "serifItalic",
   },
-  'ff-serif': {
-    fontFamily: 'serif',
+  "ff-serif": {
+    fontFamily: "serif",
   },
 }

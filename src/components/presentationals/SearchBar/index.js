@@ -52,9 +52,7 @@ export default wrap(
       return (
         <View
           style={{ elevation: type === "block" ? 6 : 0 }}
-          cls={`flxdr flx-i jcsb aic ${themeSystem.borders[type][theme]} ${themeSystem.backgrounds[theme]} ${
-            themeSystem.paddings[type]
-          } ${themeSystem.radius[type]}`}
+          cls={`flxdr flx-i jcsb aic ${themeSystem.borders[type][theme]} ${themeSystem.backgrounds[theme]} ${themeSystem.paddings[type]} ${themeSystem.radius[type]}`}
         >
           <NativeTextInput
             onChangeText={(text) => {

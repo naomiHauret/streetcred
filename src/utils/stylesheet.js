@@ -11,6 +11,6 @@ export const globalThemedStylesheet = {
   },
   paragraph: {
     fontSize: 16,
-    lineHeight: 1.5
-  }
+    lineHeight: 1.5,
+  },
 }

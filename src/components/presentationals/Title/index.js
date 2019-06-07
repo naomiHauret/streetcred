@@ -18,7 +18,11 @@ class Title extends PureComponent {
   render() {
     const { theme, align, margin, children, additionalStyles } = this.props
     return (
-      <Text cls={`fs-xl b ${margin ? margin : ""} ${additionalStyles ? additionalStyles : ""} ${themeSystem.colors[theme]} ${themeSystem.align[align]}`}>
+      <Text
+        cls={`fs-xl b ${margin ? margin : ""} ${additionalStyles ? additionalStyles : ""} ${
+          themeSystem.colors[theme]
+        } ${themeSystem.align[align]}`}
+      >
         {children}
       </Text>
     )

@@ -136,10 +136,12 @@ export default wrap(
           onPress={handleOnPress}
           cls={`${margins} ${themeSystem.aligns[align]} ${disabled === true ? "o-50" : "o-100"}`}
         >
-          <LinearGradient cls={`h100vh w100vw ${themeSystem.radius[radius]}`}
-
-              start={{ x: 0, y: 0 }}
-              end={{ x: 0, y: 1 }} colors={[COLOR_WHITE_0, COLOR_WHITE_0, COLOR_GRAY_0]}>
+          <LinearGradient
+            cls={`h100vh w100vw ${themeSystem.radius[radius]}`}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0, y: 1 }}
+            colors={[COLOR_WHITE_0, COLOR_WHITE_0, COLOR_GRAY_0]}
+          >
             <View cls={`flx-i ${themeSystem.aligns[align]}`}>{children}</View>
           </LinearGradient>
         </TouchableOpacity>

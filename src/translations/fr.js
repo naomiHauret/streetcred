@@ -2,6 +2,9 @@ export default {
   languages: {
     en: "English",
     fr: "Français",
+    es: "Espagnol",
+    de: "Allemand",
+    si: "Slovène",
   },
   menu: {
     PickedForMe: "Choisi pour moi",
@@ -12,6 +15,9 @@ export default {
     Terms: "Conditions",
   },
   labels: {
+    survey: "Enquête",
+    yes: "Oui",
+    no: "Non",
     startReading: "Commencer à lire",
     following: "Suivi",
     follow: "Suivre",
@@ -41,6 +47,7 @@ export default {
     lastConsultation: "Dernière consultation le %date%",
     doneReading: "Terminé le %date%",
     noLimit: "Marre des limites ?",
+    bestExperience: "Envie d'avoir la meilleure expérience de lecture possible ?",
   },
   placeholders: {
     search: "Rechercher...",
@@ -55,6 +62,7 @@ export default {
       "Pour avoir la meilleure expérience de lecture sur StreetCred avec du contenu personnalisé illimité et sans pub, passez à StreetCred Premium.",
   },
   messages: {
+    thankYouForTheAnswer: "Merci pour votre réponse.",
     noInternetConnection: "Aucune connexion internet",
     followSuccess: "Vous suivez désormais le thème %topic%",
     unfollowSuccess: "Vous ne suivez plus le thème %topic%",
@@ -140,16 +148,16 @@ export default {
       advantages: "Vos avantages :",
       sections: {
         limits: {
-          title: 'Fin des limites',
-          text: 'Recevez chaque jour autant de contenus que vous le souhaitez'
+          title: "Fin des limites",
+          text: "Recevez chaque jour autant de contenus que vous le souhaitez",
         },
         ads: {
-          title: 'Fin des pubs',
-          text: 'Plus aucune pub ne vient perturber votre séance de lecture'
+          title: "Fin des pubs",
+          text: "Plus aucune pub ne vient perturber votre séance de lecture",
         },
         surveys: {
-          title: 'Fin des enquêtes',
-          text: 'Vous n\'avez plus à répondre aux enquêtes pour poursuivre votre lecture'
+          title: "Fin des enquêtes",
+          text: "Vous n'avez plus à répondre aux enquêtes pour poursuivre votre lecture",
         },
       },
     },
@@ -158,24 +166,24 @@ export default {
         title: "StreetCred, c'est quoi ?",
         text: `StreetCred est bien plus qu'une qu'une simple application d'actualités.
 Chaque jour, nous sélectionnons et traduisons avec soin des contenus de toutes formes (articles de presse, de blog, transcription de vidéo, transcription de podcast...)  qui correspondent à vos centres d'intérêt, sans filtre et sans censure.
-        `
+        `,
       },
       premium: {
         title: "Mode premium",
         text: `Chaque jour, nous vous offrons %number% contenus gratuitement. En contrepartie, nous diffusons publicités et vous demandons après la lecture de chaque contenu de répondre à une enquête en rapport avec ce contenu.
 Pour accéder aux contenus de StreetCred sans limities, sans publicités et sans enquêtes, vous pouvez vous abonnez à StreetCred Premium pour seulement %price% euros par mois.
-        `
+        `,
       },
       private: {
         title: "Vie privée",
         text: `Nous accordons une grande importance à votre vie privée et à vos données.
 C'est pourquoi nous ne récoltons ni ne traquons vos informations et ne revendons pas non plus les données concernant vos centres d'intérêt.
-Nous ne stockons aucune données vous concernant (géolocalisation et autres informations présentes sur votre téléphone). De même, les publicités et les formulaires présents sur StreetCred ne peuvent extraire vos données personnelles.`
+Nous ne stockons aucune données vous concernant (géolocalisation et autres informations présentes sur votre téléphone). De même, les publicités et les formulaires présents sur StreetCred ne peuvent extraire vos données personnelles.`,
       },
       ads: {
         title: "Publicités",
-        text: `Bien que nous valorisons la diversité, le respect d'autrui et que nous nous efforçons de ne pas offenser les utilisateurs, nous ne contrôlons pas le contenu des publicités présentes sur notre application.`
-      }
-    }
-  }
+        text: `Bien que nous valorisons la diversité, le respect d'autrui et que nous nous efforçons de ne pas offenser les utilisateurs, nous ne contrôlons pas le contenu des publicités présentes sur notre application.`,
+      },
+    },
+  },
 }

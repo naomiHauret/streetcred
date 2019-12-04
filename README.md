@@ -54,3 +54,6 @@ In your terminal, run `npm install`.
 Once it's done, type `npm start` in your terminal.
 Grab your phone, flash the QR Code and that's it, Khimera is alive on your phone !
 
+## Demo
+Click the image watch the demo
+[![StreetCred app video demo](https://img.youtube.com/vi/yZ_TauoxBVU/0.jpg)](https://www.youtube.com/watch?v=yZ_TauoxBVU) 

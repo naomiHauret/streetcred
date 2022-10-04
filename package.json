@@ -20,7 +20,7 @@
     "@expo/vector-icons": "^9.0.0",
     "@skele/components": "^1.0.0-alpha.39",
     "dotize": "^0.2.0",
-    "expo": "^32.0.6",
+    "expo": "^46.0.14",
     "expo-react-native-shadow": "^1.0.3",
     "fuse.js": "^3.4.4",
     "luxon": "^1.13.2",

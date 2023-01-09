@@ -23,7 +23,7 @@
     "expo": "^32.0.6",
     "expo-react-native-shadow": "^1.0.3",
     "fuse.js": "^3.4.4",
-    "luxon": "^1.13.2",
+    "luxon": "^1.28.1",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.0.3",
     "react": "16.5.0",
